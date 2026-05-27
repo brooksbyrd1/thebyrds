@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Cormorant+SC:wght@300;400;500;600&family=Italiana&display=swap" rel="stylesheet">
 <style>
   :root {
-    --paper:       #FAF3E4;
+    --paper:       #FFFFFF;
     --parchment:   #F3E8D2;
     --bone:        #E6D7BB;
     --ink:         #2B221C;
@@ -253,15 +253,112 @@
 
   /* ─── Hero ────────────────────────────────────────────────── */
   .hero {
+    position: relative;
     min-height: 100vh;
     display: grid;
     place-items: center;
     text-align: center;
     padding: 80px 24px;
-    background:
-      radial-gradient(900px 500px at 50% 40%, rgba(255, 255, 255, 0.5), transparent 70%);
+    background: var(--parchment);
+    overflow: hidden;
     scroll-margin-top: 0;
   }
+
+  /* split-screen slideshow behind the title */
+  .hero-slideshow {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .hero-slideshow-side {
+    position: relative;
+    flex: 1 1 50%;
+    height: 100%;
+    overflow: hidden;
+    background: var(--parchment);
+  }
+  .hero-slideshow-side .slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+  .hero-slideshow-side .slide.active { opacity: 1; }
+  .hero-slideshow-side .slide img,
+  .hero-slideshow-side .slide video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.78) sepia(0.04) brightness(0.82) contrast(1.02);
+  }
+  /* faint vertical seam down the middle */
+  .hero-slideshow::after {
+    content: "";
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 50%;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.12);
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  /* dark overlay + grainy film texture — keeps the title readable */
+  .hero-scrim {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse 780px 560px at 50% 50%,
+        rgba(20, 14, 10, 0.62),
+        rgba(20, 14, 10, 0.38) 45%,
+        rgba(20, 14, 10, 0.18) 72%,
+        rgba(20, 14, 10, 0) 100%),
+      linear-gradient(180deg,
+        rgba(20, 14, 10, 0.35) 0%,
+        rgba(20, 14, 10, 0.15) 35%,
+        rgba(20, 14, 10, 0.15) 65%,
+        rgba(20, 14, 10, 0.45) 100%);
+  }
+
+  /* grain layer — SVG fractal noise, animated for a film flicker */
+  .hero-grain {
+    position: absolute;
+    inset: -10%;
+    z-index: 2;
+    pointer-events: none;
+    opacity: 0.32;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='260' height='260'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.55 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    background-size: 260px 260px;
+    animation: grainShift 1.6s steps(6) infinite;
+  }
+  @keyframes grainShift {
+    0%   { transform: translate(0, 0); }
+    20%  { transform: translate(-3%, 2%); }
+    40%  { transform: translate(2%, -2%); }
+    60%  { transform: translate(-2%, -3%); }
+    80%  { transform: translate(3%, 1%); }
+    100% { transform: translate(0, 0); }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 3;
+  }
+
+  /* light text colors on top of the dark overlay (scoped to hero only) */
+  .hero h1 { color: #F5EAD3; }
+  .hero .when { color: rgba(245, 234, 211, 0.82); }
+  .hero .where { color: rgba(245, 234, 211, 0.7); }
+  .hero .scroll-cue { color: rgba(245, 234, 211, 0.7); }
+  .hero .ornament { color: #D9B68A; }
+  .hero .eyebrow { color: #D9B68A; }
+  .hero .ampersand { color: #D9B68A; }
   .hero .eyebrow {
     font-family: 'Cormorant SC', serif;
     letter-spacing: 0.42em;
@@ -305,6 +402,7 @@
     bottom: 40px;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 3;
     font-family: 'Cormorant SC', serif;
     letter-spacing: 0.32em;
     text-transform: uppercase;
@@ -318,6 +416,7 @@
   }
 
   /* ─── Story ───────────────────────────────────────────────── */
+  .story-prose p { max-width: none; }
   .story-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -699,37 +798,34 @@
 
 <!-- ─── HERO ──────────────────────────────────────────────────── -->
 <section id="top" class="hero">
-  <div style="position:relative;">
-    <div class="eyebrow">Save the Date</div>
+  <div class="hero-slideshow" id="heroSlideshow" aria-hidden="true">
+    <div class="hero-slideshow-side" data-side="left">
+      <div class="slide" data-slot="0"></div>
+      <div class="slide" data-slot="1"></div>
+    </div>
+    <div class="hero-slideshow-side" data-side="right">
+      <div class="slide" data-slot="0"></div>
+      <div class="slide" data-slot="1"></div>
+    </div>
+  </div>
+  <div class="hero-scrim" aria-hidden="true"></div>
+  <div class="hero-grain" aria-hidden="true"></div>
+
+  <div class="hero-content">
     <h1>Brooks</h1>
     <span class="ampersand">&amp;</span>
     <h1>Allison</h1>
-    <div class="ornament">
-      <span class="rule"></span>
-      <span class="dot"></span>
-      <span class="rule"></span>
-    </div>
-    <div class="when">the twenty-fourth &amp; twenty-fifth of October, two thousand and twenty-six</div>
-    <div class="where">Mesa &middot; Arizona</div>
   </div>
-  <div class="scroll-cue">Scroll</div>
 </section>
 
 <!-- ─── 01 · OUR STORY ────────────────────────────────────────── -->
 <section id="story">
   <div class="container">
-    <div class="section-label"><span class="num">01</span>Our Story</div>
-    <h2>Lorem ipsum dolor sit amet.</h2>
-    <div class="story-grid">
-      <div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <p><em>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</em></p>
-      </div>
-      <figure>
-        <img src="Wedding5.png" alt="Placeholder engagement photo" />
-        <div class="caption">— Engagement photo placeholder —</div>
-      </figure>
+    <div class="story-prose">
+      <p>Once upon a time, Brooks traveled long and far down to the desolate desert of Arizona to test himself against the infamous riddles of Allison Lowe. Whoever was able to answer these riddles won her hand in marriage and her dowry of 100 stuffed chickens. Eager to try his luck, Brooks waded through the hoi polloi found on a commercial airline flight, lulling babies to sleep with his song and saving downed passengers.</p>
+      <p>Once the plane touched down, he eagerly rushed down into the dungeons of car rentals, only to discover that his car had been stolen by a woman and child pretending to be innocent. Luckily, he was able to woo the big corporate monster that was the parking lot attendant to get a new car. As they parted, the attendant issued a grave warning to stay away from the crazy Arizona girls and to avoid car jackers. He rushed to pick flowers from the banks of the overpass and made his way to Allison's floral fortress.</p>
+      <p>She waited for him in a beautiful, flowery dress, surrounded by citrus trees. She was guarded by two fierce little, lazy dogs and a tortoise. Brooks barely made it out alive. He took her hand and led her to the chariot and then down to the Mediterranean market, where they were met with dead rabbits, unsolicited belly dancers, and a bust of Hermes. They were so excited that they barely ate and talked at the same time, neither person hearing a word of the other. <em>It was love.</em></p>
+      <p>The rest was as predictable as the beginning, representing the average American love story. A few months went by, the wagon was packed and hauled by the finest team in Arizona to the great state of Montana where they bought a historic 1900s house and planned for many babies and large land purchases.</p>
     </div>
   </div>
 </section>
@@ -984,6 +1080,211 @@
 
 <script>
 (function() {
+  // ─── Hero split-screen slideshow ────────────────────────────
+  // Independent, staggered rotation per side. Crossfade only.
+  // NOTE: .MOV files are referenced as-is. Convert to .mp4/.webm
+  // for full cross-browser support — Safari plays .MOV natively,
+  // Chrome/Firefox may not. A 3s load timeout keeps slow media
+  // from stalling the rotation.
+  const slideshowMedia = [
+    { type: 'image', src: 'slideshow/IMG_0025.jpg' },
+    { type: 'image', src: 'slideshow/IMG_0253.jpg' },
+    { type: 'image', src: 'slideshow/IMG_0413.jpeg' },
+    { type: 'image', src: 'slideshow/IMG_0594.jpg' },
+    { type: 'image', src: 'slideshow/IMG_0595.jpg' },
+    { type: 'image', src: 'slideshow/IMG_0626.jpg' },
+    { type: 'image', src: 'slideshow/IMG_0684.JPG' },
+    { type: 'image', src: 'slideshow/IMG_0685.JPG' },
+    { type: 'image', src: 'slideshow/IMG_0686.JPG' },
+    { type: 'image', src: 'slideshow/IMG_0688.JPG' },
+    { type: 'image', src: 'slideshow/IMG_0700.jpg' },
+    { type: 'image', src: 'slideshow/IMG_0707.jpg' },
+    { type: 'image', src: 'slideshow/IMG_0710.jpg' },
+    { type: 'image', src: 'slideshow/IMG_0854.jpg' },
+    { type: 'image', src: 'slideshow/IMG_0865.jpg' },
+    { type: 'image', src: 'slideshow/IMG_0869.jpg' },
+    { type: 'image', src: 'slideshow/IMG_0965.jpg' },
+    { type: 'image', src: 'slideshow/IMG_1009.jpg' },
+    { type: 'image', src: 'slideshow/IMG_1026.jpg' },
+    { type: 'image', src: 'slideshow/IMG_1028.jpg' },
+    { type: 'image', src: 'slideshow/IMG_1029.jpg' },
+    { type: 'image', src: 'slideshow/IMG_1033.jpg' },
+    { type: 'image', src: 'slideshow/IMG_1137.jpg' },
+    { type: 'image', src: 'slideshow/IMG_1144.jpg' },
+    { type: 'image', src: 'slideshow/IMG_1154.jpg' },
+    { type: 'image', src: 'slideshow/IMG_1176.jpg' },
+    { type: 'image', src: 'slideshow/IMG_1196.jpg' },
+    { type: 'image', src: 'slideshow/IMG_1282.jpg' },
+    { type: 'image', src: 'slideshow/IMG_1289.jpg' },
+    { type: 'image', src: 'slideshow/IMG_1503.jpeg' },
+    { type: 'image', src: 'slideshow/IMG_1527.jpeg' },
+    { type: 'image', src: 'slideshow/IMG_1563.jpeg' },
+    { type: 'image', src: 'slideshow/IMG_1658.jpeg' },
+    { type: 'image', src: 'slideshow/IMG_1662.jpeg' },
+    { type: 'image', src: 'slideshow/IMG_1762.jpeg' },
+    { type: 'image', src: 'slideshow/IMG_1766.jpeg' },
+    { type: 'image', src: 'slideshow/IMG_1768.jpeg' },
+    { type: 'image', src: 'slideshow/IMG_1778.jpeg' },
+    { type: 'image', src: 'slideshow/IMG_1798.jpeg' },
+    { type: 'image', src: 'slideshow/IMG_1803.jpeg' },
+    { type: 'image', src: 'slideshow/IMG_1810.jpeg' },
+    { type: 'image', src: 'slideshow/IMG_1819.jpeg' },
+    { type: 'image', src: 'slideshow/IMG_1822.jpeg' },
+    { type: 'image', src: 'slideshow/IMG_1851.jpeg' },
+    { type: 'image', src: 'slideshow/IMG_1911.jpeg' },
+    { type: 'image', src: 'slideshow/IMG_1918.jpeg' },
+    { type: 'image', src: 'slideshow/IMG_2032.jpeg' },
+    { type: 'image', src: 'slideshow/IMG_2038.jpeg' },
+    { type: 'image', src: 'slideshow/IMG_2047.jpeg' },
+    { type: 'image', src: 'slideshow/IMG_2048.jpeg' },
+    { type: 'image', src: 'slideshow/IMG_2065.jpeg' },
+    { type: 'image', src: 'slideshow/IMG_2066.jpeg' },
+    { type: 'image', src: 'slideshow/IMG_7211.jpg' },
+    { type: 'image', src: 'slideshow/IMG_7216.jpg' },
+    { type: 'image', src: 'slideshow/IMG_7442.jpg' },
+    { type: 'image', src: 'slideshow/IMG_7471.jpg' },
+    { type: 'image', src: 'slideshow/IMG_7474.jpg' },
+    { type: 'image', src: 'slideshow/IMG_7485.jpg' },
+    { type: 'image', src: 'slideshow/IMG_7490.jpg' },
+    { type: 'image', src: 'slideshow/IMG_7515.jpg' },
+    { type: 'image', src: 'slideshow/IMG_7525.jpg' },
+    { type: 'image', src: 'slideshow/IMG_7541.jpg' },
+    { type: 'image', src: 'slideshow/IMG_7834.jpg' },
+    { type: 'image', src: 'slideshow/IMG_7837.jpg' },
+    { type: 'image', src: 'slideshow/IMG_7858.jpeg' },
+    { type: 'image', src: 'slideshow/IMG_8070.PNG' },
+    { type: 'image', src: 'slideshow/IMG_8071.PNG' },
+    { type: 'image', src: 'slideshow/IMG_8328.PNG' },
+    { type: 'image', src: 'slideshow/IMG_9410.jpg' },
+    { type: 'image', src: 'slideshow/IMG_9560.jpeg' },
+    { type: 'image', src: 'slideshow/IMG_9562.jpeg' },
+    { type: 'image', src: 'slideshow/IMG_9779.jpg' },
+    { type: 'image', src: 'slideshow/IMG_9807.JPG' },
+    { type: 'image', src: 'slideshow/IMG_9912.jpg' },
+    { type: 'image', src: 'slideshow/lp_image.jpeg' },
+    { type: 'video', src: 'slideshow/IMG_0842.MOV' },
+    { type: 'video', src: 'slideshow/IMG_1145.MOV' },
+    { type: 'video', src: 'slideshow/IMG_1651.MOV' },
+    { type: 'video', src: 'slideshow/IMG_1663.MOV' },
+    { type: 'video', src: 'slideshow/IMG_1681.MOV' },
+    { type: 'video', src: 'slideshow/IMG_1800.MOV' }
+  ];
+
+  function shuffle(arr) {
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  function makeMediaElement(item) {
+    if (item.type === 'video') {
+      const v = document.createElement('video');
+      v.src = item.src;
+      v.muted = true;
+      v.autoplay = true;
+      v.loop = true;
+      v.playsInline = true;
+      v.setAttribute('playsinline', '');
+      v.preload = 'auto';
+      return v;
+    }
+    const img = document.createElement('img');
+    img.src = item.src;
+    img.alt = '';
+    img.decoding = 'async';
+    return img;
+  }
+
+  function loadIntoSlot(slot, item) {
+    return new Promise((resolve) => {
+      const el = makeMediaElement(item);
+      let settled = false;
+      const finish = () => {
+        if (settled) return;
+        settled = true;
+        clearTimeout(timer);
+        resolve();
+      };
+      const timer = setTimeout(finish, 3000); // fallback if media is slow
+
+      if (item.type === 'video') {
+        el.addEventListener('canplay', finish, { once: true });
+        el.addEventListener('error', finish, { once: true });
+      } else {
+        if (el.complete && el.naturalWidth > 0) {
+          finish();
+        } else {
+          el.addEventListener('load', finish, { once: true });
+          el.addEventListener('error', finish, { once: true });
+        }
+      }
+      slot.replaceChildren(el);
+    });
+  }
+
+  const slideshowEl = document.getElementById('heroSlideshow');
+  if (slideshowEl && slideshowMedia.length > 0) {
+    const sideEls = slideshowEl.querySelectorAll('.hero-slideshow-side');
+    const sides = Array.from(sideEls).map((sideEl) => ({
+      slots: sideEl.querySelectorAll('.slide'),
+      pool: shuffle(slideshowMedia),
+      index: 0,
+      active: 0,
+      currentSrc: null
+    }));
+
+    // Seed side 0; nudge side 1 forward if it would start on the same photo
+    sides[0].currentSrc = sides[0].pool[0].src;
+    let startIdx = 0;
+    while (
+      sides[1].pool[startIdx].src === sides[0].currentSrc &&
+      startIdx < sides[1].pool.length - 1
+    ) {
+      startIdx++;
+    }
+    sides[1].index = startIdx;
+    sides[1].currentSrc = sides[1].pool[startIdx].src;
+
+    loadIntoSlot(sides[0].slots[0], sides[0].pool[0]).then(() => {
+      sides[0].slots[0].classList.add('active');
+    });
+    loadIntoSlot(sides[1].slots[0], sides[1].pool[startIdx]).then(() => {
+      sides[1].slots[0].classList.add('active');
+    });
+
+    async function advance(side, otherSide) {
+      // Skip past any item currently displayed on the other side
+      let attempts = 0;
+      let nextItem;
+      do {
+        side.index = (side.index + 1) % side.pool.length;
+        nextItem = side.pool[side.index];
+        attempts++;
+      } while (nextItem.src === otherSide.currentSrc && attempts < side.pool.length);
+
+      const nextSlotIdx = side.active === 0 ? 1 : 0;
+      await loadIntoSlot(side.slots[nextSlotIdx], nextItem);
+      side.slots[nextSlotIdx].classList.add('active');
+      side.slots[side.active].classList.remove('active');
+      side.active = nextSlotIdx;
+      side.currentSrc = nextItem.src;
+    }
+
+    const HOLD_MS = 3500;
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!prefersReduced) {
+      setTimeout(() => {
+        setInterval(() => advance(sides[0], sides[1]), HOLD_MS);
+      }, 1500);
+      setTimeout(() => {
+        setInterval(() => advance(sides[1], sides[0]), HOLD_MS);
+      }, 1500 + HOLD_MS / 2);
+    }
+  }
+
   // ─── Side nav: scroll-spy ───────────────────────────────────
   const sideNav = document.getElementById('sideNav');
   const sideNavList = document.getElementById('sideNavList');
