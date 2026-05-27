@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Brooks &amp; Allison · October 25, 2026</title>
+<meta name="description" content="The wedding of Brooks and Allison — October 24–25, 2026 in Mesa, Arizona." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Cormorant+SC:wght@300;400;500;600&family=Italiana&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper:       #FAF3E4;
+    --parchment:   #F3E8D2;
+    --bone:        #E6D7BB;
+    --ink:         #2B221C;
+    --soft-ink:    #4A3E34;
+    --quiet-ink:   #8A7E73;
+    --accent:      #8C2E2A; /* used sparingly — active nav, links, rules */
+    --rule:        rgba(43, 34, 28, 0.16);
+    --rule-soft:   rgba(43, 34, 28, 0.08);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    color: var(--ink);
+    background: var(--paper);
+    font-size: 18px;
+    line-height: 1.7;
+    letter-spacing: 0.005em;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* subtle paper grain */
+  body::before {
+    content: "";
+    position: fixed; inset: 0;
+    pointer-events: none; z-index: 0;
+    opacity: 0.3;
+    background-image:
+      radial-gradient(rgba(60, 40, 25, 0.04) 1px, transparent 1px),
+      radial-gradient(rgba(60, 40, 25, 0.03) 1px, transparent 1px);
+    background-size: 3px 3px, 7px 7px;
+    background-position: 0 0, 1px 2px;
+  }
+
+  main, header, footer { position: relative; z-index: 1; }
+
+  /* ─── Typography ──────────────────────────────────────────── */
+  h1, h2, .display { font-family: 'Italiana', 'Cormorant Garamond', serif; font-weight: 400; letter-spacing: 0.01em; }
+  .smallcaps {
+    font-family: 'Cormorant SC', serif;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+  }
+  h1 { font-size: clamp(64px, 11vw, 140px); line-height: 0.95; margin: 0; color: var(--ink); }
+  h2 { font-size: clamp(36px, 5vw, 56px); line-height: 1.1; margin: 0 0 24px; color: var(--ink); }
+  h3 {
+    font-family: 'Cormorant SC', serif;
+    font-weight: 500;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    font-size: 13px;
+    color: var(--accent);
+    margin: 0 0 16px;
+  }
+  p { margin: 0 0 16px; max-width: 62ch; }
+  em { font-style: italic; color: var(--soft-ink); }
+  a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(140, 46, 42, 0.3); }
+  a:hover { border-bottom-color: var(--accent); }
+
+  /* ─── Layout ──────────────────────────────────────────────── */
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  section {
+    padding: 120px 0 100px;
+    scroll-margin-top: 40px;
+  }
+
+  .section-label {
+    font-family: 'Cormorant SC', serif;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    font-size: 11px;
+    color: var(--quiet-ink);
+    margin-bottom: 28px;
+  }
+  .section-label .num { color: var(--accent); margin-right: 14px; }
+
+  /* ─── Floating left nav (desktop) ─────────────────────────── */
+  .side-nav {
+    position: fixed;
+    left: 48px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 50;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.45s ease, visibility 0.45s ease;
+  }
+  .side-nav.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+  .side-nav ol {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0 20px;
+    position: relative;
+  }
+  .side-nav ol::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 6px;
+    bottom: 6px;
+    width: 1px;
+    background: var(--rule);
+  }
+  .side-nav li { margin: 4px 0; }
+  .side-nav a {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    padding: 8px 0;
+    color: var(--quiet-ink);
+    border: none;
+    font-family: 'Cormorant SC', serif;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-size: 11px;
+    transition: color 0.25s ease, transform 0.25s ease;
+  }
+  .side-nav a:hover { color: var(--soft-ink); }
+  .side-nav a .num {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-feature-settings: "lnum";
+    font-size: 13px;
+    letter-spacing: 0;
+    color: var(--quiet-ink);
+    min-width: 22px;
+    transition: color 0.25s ease;
+  }
+  .side-nav li.active a {
+    color: var(--ink);
+    transform: translateX(4px);
+  }
+  .side-nav li.active a .num { color: var(--accent); }
+  .side-nav li.active::before {
+    content: "";
+    position: absolute;
+    left: -3px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+    margin-top: 14px;
+    transition: top 0.3s ease;
+  }
+  /* indicator dot tracks active li via top offset */
+  .side-nav .indicator {
+    position: absolute;
+    left: -3px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+    transition: top 0.45s cubic-bezier(0.65, 0, 0.35, 1);
+    opacity: 0;
+  }
+  .side-nav.has-active .indicator { opacity: 1; }
+
+  /* ─── Hamburger (mobile) ──────────────────────────────────── */
+  .hamburger {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    z-index: 200;
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--rule);
+    background: var(--paper);
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+  .hamburger span {
+    display: block;
+    position: absolute;
+    height: 1px;
+    width: 22px;
+    background: var(--ink);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  .hamburger span:nth-child(1) { transform: translateY(-6px); }
+  .hamburger span:nth-child(2) { transform: translateY(0); }
+  .hamburger span:nth-child(3) { transform: translateY(6px); }
+  .hamburger.open span:nth-child(1) { transform: translateY(0) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(0) rotate(-45deg); }
+
+  /* ─── Mobile overlay menu ─────────────────────────────────── */
+  .mobile-menu {
+    position: fixed;
+    inset: 0;
+    z-index: 150;
+    background: var(--paper);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.02);
+    transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s ease;
+    display: grid;
+    place-items: center;
+  }
+  .mobile-menu.open {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+  }
+  .mobile-menu ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  .mobile-menu li { margin: 14px 0; }
+  .mobile-menu a {
+    font-family: 'Italiana', serif;
+    font-size: 32px;
+    color: var(--ink);
+    border: none;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .mobile-menu a .num {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--accent);
+  }
+
+  /* ─── Hero ────────────────────────────────────────────────── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 80px 24px;
+    background:
+      radial-gradient(900px 500px at 50% 40%, rgba(255, 255, 255, 0.5), transparent 70%);
+    scroll-margin-top: 0;
+  }
+  .hero .eyebrow {
+    font-family: 'Cormorant SC', serif;
+    letter-spacing: 0.42em;
+    text-transform: uppercase;
+    font-size: 11px;
+    color: var(--accent);
+    margin-bottom: 28px;
+  }
+  .hero .ornament {
+    display: flex; align-items: center; justify-content: center; gap: 16px;
+    margin: 24px 0 24px;
+    color: var(--accent);
+  }
+  .hero .rule { width: 60px; height: 1px; background: currentColor; opacity: 0.5; }
+  .hero .dot { width: 5px; height: 5px; border-radius: 50%; background: currentColor; }
+  .hero .ampersand {
+    font-family: 'Italiana', serif;
+    font-style: italic;
+    font-size: clamp(60px, 9vw, 100px);
+    line-height: 0.6;
+    color: var(--accent);
+    display: block;
+    margin: 12px 0;
+  }
+  .hero .when {
+    margin-top: 36px;
+    font-style: italic;
+    color: var(--soft-ink);
+    font-size: 18px;
+  }
+  .hero .where {
+    margin-top: 8px;
+    font-family: 'Cormorant SC', serif;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: var(--quiet-ink);
+  }
+  .hero .scroll-cue {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Cormorant SC', serif;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    font-size: 10px;
+    color: var(--quiet-ink);
+    animation: fadeBob 2.4s ease-in-out infinite;
+  }
+  @keyframes fadeBob {
+    0%, 100% { transform: translateX(-50%) translateY(0); opacity: 0.6; }
+    50%      { transform: translateX(-50%) translateY(6px); opacity: 1; }
+  }
+
+  /* ─── Story ───────────────────────────────────────────────── */
+  .story-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+  .story-grid figure {
+    margin: 0;
+    background: var(--parchment);
+    border: 1px solid var(--rule-soft);
+    overflow: hidden;
+    aspect-ratio: 4 / 5;
+    box-shadow: 0 12px 28px -20px rgba(60, 30, 20, 0.4);
+  }
+  .story-grid img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .story-grid .caption {
+    font-family: 'Cormorant SC', serif;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    font-size: 11px;
+    color: var(--quiet-ink);
+    margin-top: 12px;
+  }
+
+  /* ─── Schedule ────────────────────────────────────────────── */
+  .schedule-day {
+    margin-top: 36px;
+    padding-top: 36px;
+    border-top: 1px solid var(--rule-soft);
+  }
+  .schedule-day:first-of-type { border-top: none; padding-top: 0; }
+  .schedule-day .day-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+  .schedule-day .day-title {
+    font-family: 'Italiana', serif;
+    font-size: 32px;
+    color: var(--ink);
+  }
+  .schedule-day .day-date {
+    font-family: 'Cormorant SC', serif;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    font-size: 11px;
+    color: var(--quiet-ink);
+  }
+  .schedule-event {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 24px;
+    padding: 14px 0;
+    border-bottom: 1px dotted var(--rule-soft);
+    align-items: baseline;
+  }
+  .schedule-event:last-of-type { border-bottom: none; }
+  .schedule-event .time {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: var(--accent);
+    font-feature-settings: "lnum";
+  }
+  .schedule-event .name {
+    font-family: 'Italiana', serif;
+    font-size: 20px;
+    color: var(--ink);
+  }
+  .schedule-event .where {
+    font-style: italic;
+    color: var(--quiet-ink);
+    font-size: 14px;
+    margin-top: 2px;
+  }
+  .schedule-event .attire {
+    font-family: 'Cormorant SC', serif;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-size: 10px;
+    color: var(--quiet-ink);
+    margin-top: 4px;
+  }
+
+  .ics-button {
+    display: inline-block;
+    margin-top: 32px;
+    padding: 12px 28px;
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid var(--accent);
+    font-family: 'Cormorant SC', serif;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    font-size: 11px;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+  .ics-button:hover {
+    background: var(--accent);
+    color: var(--paper);
+  }
+
+  /* ─── Orthodox section ────────────────────────────────────── */
+  .orthodox-intro {
+    font-size: 22px;
+    font-style: italic;
+    color: var(--soft-ink);
+    line-height: 1.6;
+    margin-bottom: 40px;
+    max-width: 60ch;
+  }
+  .orthodox-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .orthodox-list li {
+    padding: 24px 0;
+    border-top: 1px solid var(--rule-soft);
+  }
+  .orthodox-list li:last-child { border-bottom: 1px solid var(--rule-soft); }
+  .orthodox-list h4 {
+    font-family: 'Italiana', serif;
+    font-size: 24px;
+    color: var(--ink);
+    margin: 0 0 8px;
+    font-weight: 400;
+  }
+  .orthodox-list p { margin: 0; color: var(--soft-ink); }
+
+  /* ─── Travel ──────────────────────────────────────────────── */
+  .travel-block {
+    margin-top: 32px;
+    padding: 24px 0;
+    border-top: 1px solid var(--rule-soft);
+  }
+  .travel-block:first-of-type { border-top: none; padding-top: 0; }
+  .travel-block h4 {
+    font-family: 'Cormorant SC', serif;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: var(--accent);
+    margin: 0 0 8px;
+    font-weight: 500;
+  }
+  .travel-block .where {
+    font-family: 'Italiana', serif;
+    font-size: 22px;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+  .travel-block .addr {
+    font-style: italic;
+    color: var(--quiet-ink);
+    font-size: 15px;
+    margin-bottom: 8px;
+  }
+  .map-frame {
+    margin-top: 36px;
+    border: 1px solid var(--rule);
+    background: var(--parchment);
+    aspect-ratio: 16 / 10;
+    width: 100%;
+    overflow: hidden;
+  }
+  .map-frame iframe {
+    width: 100%; height: 100%;
+    border: 0;
+    display: block;
+    filter: saturate(0.85) sepia(0.05);
+  }
+  .map-caption {
+    font-family: 'Cormorant SC', serif;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    font-size: 11px;
+    color: var(--quiet-ink);
+    margin-top: 12px;
+  }
+
+  /* ─── FAQ ─────────────────────────────────────────────────── */
+  .faq details {
+    border-top: 1px solid var(--rule-soft);
+    padding: 18px 0;
+  }
+  .faq details:last-of-type { border-bottom: 1px solid var(--rule-soft); }
+  .faq summary {
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 24px;
+    font-family: 'Italiana', serif;
+    font-size: 20px;
+    color: var(--ink);
+    padding: 4px 0;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after {
+    content: "+";
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    color: var(--accent);
+    line-height: 1;
+    transition: transform 0.25s ease;
+  }
+  .faq details[open] summary::after { content: "—"; }
+  .faq .answer {
+    padding: 16px 0 8px;
+    color: var(--soft-ink);
+    font-size: 17px;
+    line-height: 1.7;
+  }
+
+  /* ─── RSVP ────────────────────────────────────────────────── */
+  .rsvp-stub {
+    margin-top: 36px;
+    padding: 60px 32px;
+    background: var(--parchment);
+    border: 1px dashed var(--rule);
+    text-align: center;
+    min-height: 480px;
+    display: grid;
+    place-items: center;
+  }
+  .rsvp-stub .stub-label {
+    font-family: 'Cormorant SC', serif;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    font-size: 11px;
+    color: var(--quiet-ink);
+    margin-bottom: 14px;
+  }
+  .rsvp-stub .stub-title {
+    font-family: 'Italiana', serif;
+    font-size: 28px;
+    color: var(--soft-ink);
+    margin-bottom: 8px;
+  }
+  .rsvp-stub .stub-note {
+    font-style: italic;
+    color: var(--quiet-ink);
+    font-size: 15px;
+    max-width: 40ch;
+  }
+
+  /* ─── Gifts ───────────────────────────────────────────────── */
+  .gifts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 32px;
+  }
+  .gift-card {
+    padding: 32px 24px;
+    background: var(--parchment);
+    border: 1px solid var(--rule-soft);
+    text-align: center;
+  }
+  .gift-card h4 {
+    font-family: 'Italiana', serif;
+    font-size: 22px;
+    color: var(--ink);
+    margin: 0 0 8px;
+    font-weight: 400;
+  }
+  .gift-card p {
+    font-style: italic;
+    color: var(--quiet-ink);
+    font-size: 14px;
+    margin: 0 auto 16px;
+    max-width: none;
+  }
+  .gift-card .link {
+    display: inline-block;
+    margin-top: 8px;
+    font-family: 'Cormorant SC', serif;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    font-size: 11px;
+    color: var(--accent);
+    border-bottom: 1px solid rgba(140, 46, 42, 0.3);
+    padding-bottom: 2px;
+  }
+
+  /* ─── Contact ─────────────────────────────────────────────── */
+  .contact {
+    text-align: center;
+    padding-bottom: 60px;
+  }
+  .contact .email {
+    font-family: 'Italiana', serif;
+    font-size: 32px;
+    color: var(--ink);
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 6px;
+    margin-top: 16px;
+    display: inline-block;
+  }
+
+  /* ─── Footer ──────────────────────────────────────────────── */
+  footer {
+    text-align: center;
+    padding: 60px 24px;
+    border-top: 1px solid var(--rule);
+    color: var(--quiet-ink);
+    font-style: italic;
+    font-size: 14px;
+  }
+  footer .amp {
+    font-family: 'Italiana', serif;
+    font-style: italic;
+    font-size: 36px;
+    color: var(--accent);
+    display: block;
+    line-height: 0.8;
+    margin-bottom: 12px;
+  }
+
+  /* ─── Responsive ──────────────────────────────────────────── */
+  @media (max-width: 900px) {
+    .side-nav { display: none; }
+    .hamburger { display: flex; }
+    .story-grid { grid-template-columns: 1fr; gap: 32px; }
+    .gifts-grid { grid-template-columns: 1fr; }
+    .schedule-event { grid-template-columns: 80px 1fr; gap: 16px; }
+    section { padding: 80px 0 60px; }
+    h1 { font-size: clamp(56px, 16vw, 100px); }
+    .container { padding: 0 24px; }
+  }
+
+  body.menu-open { overflow: hidden; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── Floating left nav (desktop) ───────────────────────────── -->
+<nav class="side-nav" id="sideNav" aria-label="Sections">
+  <ol id="sideNavList">
+    <li data-target="story"><a href="#story"><span class="num">01</span><span class="label">Our Story</span></a></li>
+    <li data-target="schedule"><a href="#schedule"><span class="num">02</span><span class="label">The Days</span></a></li>
+    <li data-target="orthodox"><a href="#orthodox"><span class="num">03</span><span class="label">Orthodox Wedding</span></a></li>
+    <li data-target="travel"><a href="#travel"><span class="num">04</span><span class="label">Travel &amp; Stay</span></a></li>
+    <li data-target="faq"><a href="#faq"><span class="num">05</span><span class="label">FAQ</span></a></li>
+    <li data-target="rsvp"><a href="#rsvp"><span class="num">06</span><span class="label">RSVP</span></a></li>
+    <li data-target="gifts"><a href="#gifts"><span class="num">07</span><span class="label">Gifts</span></a></li>
+    <li data-target="contact"><a href="#contact"><span class="num">08</span><span class="label">Contact</span></a></li>
+  </ol>
+</nav>
+
+<!-- ─── Hamburger + mobile overlay ────────────────────────────── -->
+<button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+  <span></span><span></span><span></span>
+</button>
+
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Menu">
+  <ol>
+    <li><a href="#story"><span class="num">01</span> Our Story</a></li>
+    <li><a href="#schedule"><span class="num">02</span> The Days</a></li>
+    <li><a href="#orthodox"><span class="num">03</span> Orthodox Wedding</a></li>
+    <li><a href="#travel"><span class="num">04</span> Travel &amp; Stay</a></li>
+    <li><a href="#faq"><span class="num">05</span> FAQ</a></li>
+    <li><a href="#rsvp"><span class="num">06</span> RSVP</a></li>
+    <li><a href="#gifts"><span class="num">07</span> Gifts</a></li>
+    <li><a href="#contact"><span class="num">08</span> Contact</a></li>
+  </ol>
+</div>
+
+<main>
+
+<!-- ─── HERO ──────────────────────────────────────────────────── -->
+<section id="top" class="hero">
+  <div style="position:relative;">
+    <div class="eyebrow">Save the Date</div>
+    <h1>Brooks</h1>
+    <span class="ampersand">&amp;</span>
+    <h1>Allison</h1>
+    <div class="ornament">
+      <span class="rule"></span>
+      <span class="dot"></span>
+      <span class="rule"></span>
+    </div>
+    <div class="when">the twenty-fourth &amp; twenty-fifth of October, two thousand and twenty-six</div>
+    <div class="where">Mesa &middot; Arizona</div>
+  </div>
+  <div class="scroll-cue">Scroll</div>
+</section>
+
+<!-- ─── 01 · OUR STORY ────────────────────────────────────────── -->
+<section id="story">
+  <div class="container">
+    <div class="section-label"><span class="num">01</span>Our Story</div>
+    <h2>Lorem ipsum dolor sit amet.</h2>
+    <div class="story-grid">
+      <div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p><em>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</em></p>
+      </div>
+      <figure>
+        <img src="Wedding5.png" alt="Placeholder engagement photo" />
+        <div class="caption">— Engagement photo placeholder —</div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ─── 02 · THE DAYS ─────────────────────────────────────────── -->
+<section id="schedule">
+  <div class="container">
+    <div class="section-label"><span class="num">02</span>The Days</div>
+    <h2>Lorem ipsum dolor sit amet.</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+    <div class="schedule-day">
+      <div class="day-header">
+        <div class="day-title">Lorem Ipsum</div>
+        <div class="day-date">Saturday · October 24, 2026</div>
+      </div>
+      <div class="schedule-event">
+        <div class="time">5:00 pm</div>
+        <div>
+          <div class="name">Lorem ipsum dolor sit</div>
+          <div class="where">Consectetur adipiscing elit, sed do eiusmod</div>
+          <div class="attire">Attire · Lorem ipsum</div>
+        </div>
+      </div>
+      <div class="schedule-event">
+        <div class="time">7:30 pm</div>
+        <div>
+          <div class="name">Ut enim ad minim veniam</div>
+          <div class="where">Quis nostrud exercitation ullamco laboris</div>
+          <div class="attire">Attire · Lorem ipsum</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="schedule-day">
+      <div class="day-header">
+        <div class="day-title">Dolor Sit Amet</div>
+        <div class="day-date">Sunday · October 25, 2026</div>
+      </div>
+      <div class="schedule-event">
+        <div class="time">3:00 pm</div>
+        <div>
+          <div class="name">Duis aute irure dolor</div>
+          <div class="where">St. Ignatius Orthodox Christian Church · Mesa, AZ</div>
+          <div class="attire">Attire · Lorem ipsum</div>
+        </div>
+      </div>
+      <div class="schedule-event">
+        <div class="time">5:30 pm</div>
+        <div>
+          <div class="name">Reprehenderit in voluptate</div>
+          <div class="where">Velit esse cillum dolore eu fugiat</div>
+          <div class="attire">Attire · Lorem ipsum</div>
+        </div>
+      </div>
+      <div class="schedule-event">
+        <div class="time">10:00 pm</div>
+        <div>
+          <div class="name">Excepteur sint occaecat</div>
+          <div class="where">Cupidatat non proident, sunt in culpa</div>
+          <div class="attire">Attire · Lorem ipsum</div>
+        </div>
+      </div>
+    </div>
+
+    <button class="ics-button" id="icsButton" type="button">Add to Calendar</button>
+  </div>
+</section>
+
+<!-- ─── 03 · ORTHODOX WEDDING ─────────────────────────────────── -->
+<section id="orthodox">
+  <div class="container">
+    <div class="section-label"><span class="num">03</span>Orthodox Wedding</div>
+    <h2>What is an Orthodox wedding?</h2>
+    <p class="orthodox-intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+    <ul class="orthodox-list">
+      <li>
+        <h4>Lorem ipsum dolor</h4>
+        <p>Consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+      </li>
+      <li>
+        <h4>Sit amet consectetur</h4>
+        <p>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>
+      </li>
+      <li>
+        <h4>Adipiscing elit sed</h4>
+        <p>Nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </li>
+      <li>
+        <h4>Eiusmod tempor incididunt</h4>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+      </li>
+      <li>
+        <h4>Ut labore et dolore</h4>
+        <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ─── 04 · TRAVEL & STAY ────────────────────────────────────── -->
+<section id="travel">
+  <div class="container">
+    <div class="section-label"><span class="num">04</span>Travel &amp; Stay</div>
+    <h2>Lorem ipsum dolor sit amet.</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+    <div class="travel-block">
+      <h4>The Ceremony</h4>
+      <div class="where">St. Ignatius Orthodox Christian Church</div>
+      <div class="addr">2402 N Usery Pass Rd, Mesa, AZ 85207</div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+
+    <div class="travel-block">
+      <h4>Getting Here</h4>
+      <div class="where">Phoenix Sky Harbor International (PHX)</div>
+      <div class="addr">Approximately 35 minutes from the venue</div>
+      <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+
+    <div class="travel-block">
+      <h4>Where to Stay</h4>
+      <div class="where">Lorem Ipsum Hotel — Block A</div>
+      <div class="addr">Booking code: LOREMIPSUM · Rate from $XXX/night</div>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+    </div>
+
+    <div class="travel-block">
+      <h4>Lorem Ipsum Hotel — Block B</h4>
+      <div class="where">Dolor Sit Amet Resort</div>
+      <div class="addr">Booking code: DOLORSIT · Rate from $XXX/night</div>
+      <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.</p>
+    </div>
+
+    <div class="map-frame">
+      <iframe
+        src="https://www.google.com/maps?q=2402+N+Usery+Pass+Rd,+Mesa,+AZ+85207&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Map to St. Ignatius Orthodox Christian Church"></iframe>
+    </div>
+    <div class="map-caption">St. Ignatius Orthodox Christian Church · 2402 N Usery Pass Rd · Mesa, AZ</div>
+  </div>
+</section>
+
+<!-- ─── 05 · FAQ ──────────────────────────────────────────────── -->
+<section id="faq">
+  <div class="container">
+    <div class="section-label"><span class="num">05</span>FAQ</div>
+    <h2>Lorem ipsum dolor sit amet.</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
+
+    <div class="faq" style="margin-top: 36px;">
+      <details>
+        <summary>Lorem ipsum dolor sit amet, consectetur?</summary>
+        <div class="answer">Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+      </details>
+      <details>
+        <summary>Ut enim ad minim veniam, quis nostrud?</summary>
+        <div class="answer">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</div>
+      </details>
+      <details>
+        <summary>Excepteur sint occaecat cupidatat non proident?</summary>
+        <div class="answer">Sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</div>
+      </details>
+      <details>
+        <summary>Accusantium doloremque laudantium, totam rem aperiam?</summary>
+        <div class="answer">Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</div>
+      </details>
+      <details>
+        <summary>Nemo enim ipsam voluptatem quia voluptas sit?</summary>
+        <div class="answer">Aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</div>
+      </details>
+      <details>
+        <summary>Neque porro quisquam est, qui dolorem ipsum?</summary>
+        <div class="answer">Quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt.</div>
+      </details>
+      <details>
+        <summary>Ut labore et dolore magnam aliquam quaerat?</summary>
+        <div class="answer">Voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.</div>
+      </details>
+      <details>
+        <summary>Nisi ut aliquid ex ea commodi consequatur?</summary>
+        <div class="answer">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ─── 06 · RSVP ─────────────────────────────────────────────── -->
+<section id="rsvp">
+  <div class="container">
+    <div class="section-label"><span class="num">06</span>RSVP</div>
+    <h2>Lorem ipsum dolor sit amet.</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
+
+    <div class="rsvp-stub" id="rsvpEmbed">
+      <div>
+        <div class="stub-label">— Form Placeholder —</div>
+        <div class="stub-title">Tally form embeds here</div>
+        <div class="stub-note">Once the Tally form is created (name, email, mailing address, attending y/n, party size), we'll paste the embed iframe into this container.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── 07 · GIFTS ────────────────────────────────────────────── -->
+<section id="gifts">
+  <div class="container">
+    <div class="section-label"><span class="num">07</span>Gifts</div>
+    <h2>Lorem ipsum dolor sit amet.</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+    <div class="gifts-grid">
+      <div class="gift-card">
+        <h4>Lorem Ipsum</h4>
+        <p>Consectetur adipiscing elit, sed do eiusmod tempor.</p>
+        <a class="link" href="#">Visit Registry</a>
+      </div>
+      <div class="gift-card">
+        <h4>Dolor Sit Amet</h4>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation.</p>
+        <a class="link" href="#">Honeymoon Fund</a>
+      </div>
+      <div class="gift-card">
+        <h4>Consectetur</h4>
+        <p>Duis aute irure dolor in reprehenderit in voluptate.</p>
+        <a class="link" href="#">Donate</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── 08 · CONTACT ──────────────────────────────────────────── -->
+<section id="contact">
+  <div class="container contact">
+    <div class="section-label" style="justify-content:center;"><span class="num">08</span>Contact</div>
+    <h2>Lorem ipsum dolor.</h2>
+    <p style="margin: 0 auto 24px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.</p>
+    <a class="email" href="mailto:hello@brooksandallison.com">hello@brooksandallison.com</a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <span class="amp">&amp;</span>
+  Brooks &amp; Allison · October 25, 2026 · Mesa, Arizona
+</footer>
+
+<script>
+(function() {
+  // ─── Side nav: scroll-spy ───────────────────────────────────
+  const sideNav = document.getElementById('sideNav');
+  const sideNavList = document.getElementById('sideNavList');
+  const navItems = Array.from(sideNavList.querySelectorAll('li'));
+  const hero = document.getElementById('top');
+
+  // Build a target → li map
+  const navMap = new Map();
+  navItems.forEach(li => navMap.set(li.dataset.target, li));
+
+  // Show nav only after scrolling past hero
+  const heroObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        sideNav.classList.remove('visible');
+      } else {
+        sideNav.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.2 });
+  heroObserver.observe(hero);
+
+  // Section scroll-spy — Google Docs style (highlights current section)
+  const sections = Array.from(document.querySelectorAll('main section[id]:not(#top)'));
+  const spy = new IntersectionObserver((entries) => {
+    // Find the entry closest to the top viewport line
+    let topEntry = null;
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        if (!topEntry || entry.boundingClientRect.top < topEntry.boundingClientRect.top) {
+          topEntry = entry;
+        }
+      }
+    });
+    if (topEntry) {
+      setActive(topEntry.target.id);
+    }
+  }, { rootMargin: '-35% 0px -55% 0px', threshold: 0 });
+
+  sections.forEach(s => spy.observe(s));
+
+  function setActive(id) {
+    navItems.forEach(li => li.classList.remove('active'));
+    const active = navMap.get(id);
+    if (active) {
+      active.classList.add('active');
+      sideNav.classList.add('has-active');
+    }
+  }
+
+  // ─── Hamburger / mobile overlay ─────────────────────────────
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  function setMenuOpen(open) {
+    hamburger.classList.toggle('open', open);
+    mobileMenu.classList.toggle('open', open);
+    document.body.classList.toggle('menu-open', open);
+    hamburger.setAttribute('aria-expanded', String(open));
+  }
+
+  hamburger.addEventListener('click', () => {
+    setMenuOpen(!mobileMenu.classList.contains('open'));
+  });
+
+  // Close overlay on nav click
+  mobileMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => setMenuOpen(false));
+  });
+
+  // Close on Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileMenu.classList.contains('open')) setMenuOpen(false);
+  });
+
+  // ─── Add to Calendar (.ics download) ────────────────────────
+  const icsButton = document.getElementById('icsButton');
+  icsButton.addEventListener('click', () => {
+    // Arizona does not observe DST — use America/Phoenix (MST, UTC-7 year-round)
+    // Wedding: Oct 25, 2026, 3:00 PM – 10:00 PM MST
+    // In UTC: 22:00 – next-day 05:00
+    const ics = [
+      'BEGIN:VCALENDAR',
+      'VERSION:2.0',
+      'PRODID:-//Brooks and Allison//Wedding//EN',
+      'CALSCALE:GREGORIAN',
+      'METHOD:PUBLISH',
+      'BEGIN:VEVENT',
+      'UID:brooks-allison-wedding-2026@brooksandallison.com',
+      'DTSTAMP:20260101T000000Z',
+      'DTSTART:20261025T220000Z',
+      'DTEND:20261026T050000Z',
+      'SUMMARY:Brooks & Allison\'s Wedding',
+      'LOCATION:St. Ignatius Orthodox Christian Church\\, 2402 N Usery Pass Rd\\, Mesa\\, AZ 85207',
+      'DESCRIPTION:Ceremony and reception. Details at brooksandallison.com',
+      'END:VEVENT',
+      'BEGIN:VEVENT',
+      'UID:brooks-allison-rehearsal-2026@brooksandallison.com',
+      'DTSTAMP:20260101T000000Z',
+      'DTSTART:20261025T000000Z',
+      'DTEND:20261025T040000Z',
+      'SUMMARY:Brooks & Allison — Rehearsal Dinner',
+      'LOCATION:Mesa\\, AZ',
+      'DESCRIPTION:Rehearsal dinner the evening of October 24.',
+      'END:VEVENT',
+      'END:VCALENDAR'
+    ].join('\r\n');
+
+    const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'brooks-and-allison-wedding.ics';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Brooks &amp; Allison — Brand Guidelines</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Cormorant+SC:wght@300;400;500;600&family=Italiana&family=Pinyon+Script&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* Primary — Deep Anchors */
+    --bordeaux:     #5C1A1B;   /* sacramental wine, anchor */
+    --brick:        #8C2E2A;   /* block-print red, persian */
+    --cypress:      #2B4A3E;   /* sacramental green, sporting club */
+    --saffron:      #C29139;   /* harvest gold, Santa Fe ochre */
+
+    /* Earthen — Santa Fe × Tuscany */
+    --terracotta:   #B8553A;
+    --persimmon:    #C9602D;
+    --adobe:        #D4A87E;   /* warm plaster */
+    --olive:        #7A6E3D;   /* sun-faded bronze-olive */
+
+    /* Soft Bloom */
+    --dusty-rose:   #C68B86;
+    --mauve:        #9C5F66;
+    --blush:        #E5C7BD;
+
+    /* Sacramental Metals */
+    --gold:         #A7864B;
+    --candle:       #D4A85A;   /* beeswax candlelight */
+
+    /* Parchment, Ink */
+    --paper:        #FAF3E4;
+    --parchment:    #F3E8D2;
+    --bone:         #E6D7BB;
+    --ink:          #2B221C;
+    --soft-ink:     #4A3E34;
+
+    --rule:         rgba(43, 34, 28, 0.18);
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    color: var(--ink);
+    background:
+      radial-gradient(1200px 600px at 10% 0%, rgba(184, 85, 58, 0.06), transparent 60%),
+      radial-gradient(900px 500px at 90% 100%, rgba(140, 46, 42, 0.05), transparent 60%),
+      var(--paper);
+    font-size: 17px;
+    line-height: 1.65;
+    letter-spacing: 0.005em;
+  }
+
+  body::before {
+    content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 0; opacity: 0.35;
+    background-image:
+      radial-gradient(rgba(60, 40, 25, 0.04) 1px, transparent 1px),
+      radial-gradient(rgba(60, 40, 25, 0.03) 1px, transparent 1px);
+    background-size: 3px 3px, 7px 7px;
+    background-position: 0 0, 1px 2px;
+  }
+
+  main { position: relative; z-index: 1; }
+
+  .container { max-width: 1080px; margin: 0 auto; padding: 0 56px; }
+
+  /* ─── Typography ──────────────────────────────────────────── */
+  h1, h2, h3, .display { font-family: 'Italiana', 'Cormorant Garamond', serif; font-weight: 400; letter-spacing: 0.01em; }
+  .script { font-family: 'Pinyon Script', cursive; font-weight: 400; }
+  .smallcaps { font-family: 'Cormorant SC', serif; letter-spacing: 0.22em; text-transform: uppercase; }
+  .inscription { font-family: 'Cinzel', 'Italiana', serif; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; }
+
+  h1 { font-size: clamp(56px, 8vw, 104px); line-height: 1; margin: 0; color: var(--bordeaux); }
+  h2 { font-size: clamp(32px, 4vw, 48px); line-height: 1.1; margin: 0 0 18px; color: var(--bordeaux); }
+  h3 { font-size: 22px; margin: 0 0 10px; color: var(--soft-ink); font-family: 'Cormorant SC', serif; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 500; }
+
+  p { margin: 0 0 14px; }
+  em { font-style: italic; color: var(--soft-ink); }
+
+  /* ─── Section frame ───────────────────────────────────────── */
+  section { padding: 96px 0 72px; position: relative; }
+  section + section { border-top: 1px solid var(--rule); }
+
+  .eyebrow {
+    font-family: 'Cinzel', serif;
+    letter-spacing: 0.42em;
+    text-transform: uppercase;
+    font-size: 11px;
+    color: var(--terracotta);
+    margin-bottom: 28px;
+  }
+
+  .lede { font-size: 22px; font-style: italic; color: var(--soft-ink); max-width: 720px; line-height: 1.5; }
+
+  /* ─── Cover ───────────────────────────────────────────────── */
+  .cover {
+    min-height: 96vh;
+    display: grid; place-items: center; text-align: center;
+    padding: 80px 24px;
+    background:
+      radial-gradient(900px 500px at 50% 30%, rgba(212, 168, 90, 0.18), transparent 70%),
+      radial-gradient(700px 400px at 50% 80%, rgba(43, 74, 62, 0.06), transparent 70%);
+    position: relative;
+  }
+  .cover .arch {
+    position: absolute; inset: 40px; pointer-events: none;
+    border: 1px solid rgba(167, 134, 75, 0.4);
+    border-radius: 50% 50% 8px 8px / 18% 18% 8px 8px;
+    max-width: 600px; margin: 0 auto; left: 0; right: 0;
+  }
+  .cover .ornament-row {
+    display: flex; align-items: center; gap: 18px; justify-content: center;
+    color: var(--saffron);
+    margin: 24px 0 8px;
+  }
+  .cover .rule { width: 80px; height: 1px; background: var(--saffron); opacity: 0.7; }
+  .cover .florette { width: 22px; height: 22px; }
+  .cover .ampersand {
+    font-family: 'Pinyon Script', cursive;
+    font-size: clamp(90px, 12vw, 160px);
+    color: var(--brick);
+    line-height: 0.6;
+    display: block;
+    margin: 8px 0 0;
+  }
+  .cover .subtitle { margin-top: 36px; color: var(--soft-ink); }
+  .cover .date {
+    margin-top: 8px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 20px;
+    color: var(--soft-ink);
+  }
+  .cover .booklabel {
+    margin-top: 56px;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 0.42em;
+    text-transform: uppercase;
+    font-size: 11px;
+    color: var(--saffron);
+  }
+
+  /* ─── Mood grid ───────────────────────────────────────────── */
+  .mood-grid {
+    display: grid; grid-template-columns: repeat(12, 1fr);
+    gap: 18px; margin-top: 32px;
+  }
+  .mood-grid figure {
+    margin: 0; background: var(--cream); border: 1px solid var(--rule);
+    overflow: hidden;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.6) inset, 0 12px 24px -18px rgba(60, 30, 20, 0.4);
+  }
+  .mood-grid img { display: block; width: 100%; height: 100%; object-fit: cover; filter: saturate(1.02); }
+  .mood-1 { grid-column: span 7; aspect-ratio: 4 / 3; }
+  .mood-2 { grid-column: span 5; aspect-ratio: 4 / 5; }
+  .mood-3 { grid-column: span 5; aspect-ratio: 4 / 5; }
+  .mood-4 { grid-column: span 4; aspect-ratio: 1 / 1; }
+  .mood-5 { grid-column: span 3; aspect-ratio: 4 / 5; }
+
+  /* ─── Lenses (mood vocabulary) ────────────────────────────── */
+  .lenses {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin-top: 28px;
+  }
+  .lens {
+    border-left: 2px solid var(--saffron);
+    padding: 12px 18px;
+    background: rgba(212, 168, 90, 0.06);
+  }
+  .lens .h {
+    font-family: 'Italiana', serif;
+    font-size: 22px;
+    color: var(--bordeaux);
+    line-height: 1.1;
+  }
+  .lens .d {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--soft-ink);
+    font-size: 15px;
+    margin-top: 4px;
+  }
+
+  /* Anchor words */
+  .words {
+    display: flex; flex-wrap: wrap; gap: 28px 56px; align-items: baseline; margin-top: 24px;
+  }
+  .words .word {
+    font-family: 'Italiana', serif;
+    font-size: clamp(34px, 5vw, 60px);
+    line-height: 1;
+    color: var(--bordeaux);
+  }
+  .words .word .dot {
+    display: inline-block; width: 6px; height: 6px; border-radius: 50%;
+    background: var(--saffron); vertical-align: middle; margin-left: 14px;
+  }
+
+  /* The triangulation diagram */
+  .triangle {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 18px;
+    margin-top: 28px;
+  }
+  .triangle .corner {
+    border: 1px solid var(--rule);
+    background: var(--cream);
+    padding: 22px 24px;
+    text-align: left;
+  }
+  .triangle .corner .place {
+    font-family: 'Cinzel', serif;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: var(--saffron);
+    margin-bottom: 8px;
+  }
+  .triangle .corner .what {
+    font-family: 'Italiana', serif;
+    font-size: 26px;
+    color: var(--bordeaux);
+    line-height: 1.1;
+    margin-bottom: 10px;
+  }
+  .triangle .corner ul { margin: 0; padding-left: 18px; color: var(--soft-ink); font-style: italic; font-size: 15px; }
+  .triangle .corner li { margin-bottom: 4px; }
+
+  /* ─── Color palette ───────────────────────────────────────── */
+  .swatch-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 28px; }
+  .swatch { border: 1px solid var(--rule); background: var(--cream); display: flex; flex-direction: column; }
+  .swatch .chip { height: 140px; position: relative; }
+  .swatch .meta { padding: 14px 16px 18px; }
+  .swatch .name {
+    font-family: 'Cinzel', serif;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-size: 11px;
+    color: var(--soft-ink);
+    margin-bottom: 4px;
+  }
+  .swatch .hex {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    color: var(--ink);
+    font-feature-settings: "lnum";
+  }
+  .swatch .role { font-style: italic; color: var(--soft-ink); font-size: 14px; margin-top: 4px; }
+
+  .palette-group { margin-top: 36px; }
+  .palette-group h3 { margin-bottom: 14px; }
+
+  /* ─── Type specimens ──────────────────────────────────────── */
+  .type-stack { display: grid; gap: 36px; margin-top: 28px; }
+  .specimen { border: 1px solid var(--rule); background: var(--cream); padding: 36px 40px; position: relative; }
+  .specimen .label {
+    font-family: 'Cinzel', serif;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    font-size: 11px;
+    color: var(--terracotta);
+    margin-bottom: 14px;
+  }
+  .specimen .sample-display { font-family: 'Italiana', serif; font-size: 64px; line-height: 1; color: var(--bordeaux); }
+  .specimen .sample-script { font-family: 'Pinyon Script', cursive; font-size: 72px; line-height: 1; color: var(--brick); }
+  .specimen .sample-body { font-family: 'Cormorant Garamond', serif; font-size: 19px; line-height: 1.7; color: var(--ink); max-width: 60ch; }
+  .specimen .sample-body em { color: var(--soft-ink); }
+  .specimen .sample-inscription { font-family: 'Cinzel', serif; letter-spacing: 0.32em; text-transform: uppercase; font-size: 18px; color: var(--bordeaux); font-weight: 500; }
+  .specimen .sample-caps { font-family: 'Cormorant SC', serif; letter-spacing: 0.32em; text-transform: uppercase; font-size: 15px; color: var(--soft-ink); }
+  .specimen .alphabet { margin-top: 16px; font-family: 'Italiana', serif; font-size: 22px; color: var(--soft-ink); letter-spacing: 0.04em; }
+  .pair-grid { display: grid; grid-template-columns: 220px 1fr; gap: 24px; align-items: baseline; }
+  .pair-grid .meta { font-size: 14px; color: var(--soft-ink); }
+  .pair-grid .meta dt {
+    font-family: 'Cinzel', serif;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-size: 11px;
+    color: var(--terracotta);
+    margin-top: 10px;
+  }
+  .pair-grid .meta dd { margin: 2px 0 0; font-style: italic; }
+
+  /* ─── Patterns ────────────────────────────────────────────── */
+  .pattern-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 28px; }
+  .pattern {
+    border: 1px solid var(--rule);
+    aspect-ratio: 1 / 1;
+    position: relative;
+    overflow: hidden;
+  }
+  .pattern .caption {
+    position: absolute; left: 12px; bottom: 10px; right: 12px;
+    font-family: 'Cinzel', serif; letter-spacing: 0.22em; text-transform: uppercase;
+    font-size: 10px; color: var(--paper);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+  }
+
+  /* Gingham */
+  .gingham { background-color: var(--paper); }
+  .gingham::before, .gingham::after { content: ""; position: absolute; inset: 0; }
+  .gingham.terracotta::before { background: repeating-linear-gradient(0deg, rgba(184, 85, 58, 0.5) 0 14px, transparent 14px 28px); }
+  .gingham.terracotta::after  { background: repeating-linear-gradient(90deg, rgba(184, 85, 58, 0.5) 0 14px, transparent 14px 28px); mix-blend-mode: multiply; }
+  .gingham.bordeaux::before   { background: repeating-linear-gradient(0deg, rgba(140, 46, 42, 0.55) 0 14px, transparent 14px 28px); }
+  .gingham.bordeaux::after    { background: repeating-linear-gradient(90deg, rgba(140, 46, 42, 0.55) 0 14px, transparent 14px 28px); mix-blend-mode: multiply; }
+  .gingham.cypress::before    { background: repeating-linear-gradient(0deg, rgba(43, 74, 62, 0.6) 0 18px, transparent 18px 36px); }
+  .gingham.cypress::after     { background: repeating-linear-gradient(90deg, rgba(43, 74, 62, 0.6) 0 18px, transparent 18px 36px); mix-blend-mode: multiply; }
+
+  /* Block-print floret */
+  .blockprint {
+    background-color: var(--paper);
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'><g fill='%238C2E2A' fill-opacity='0.85'><circle cx='30' cy='30' r='3.2'/><circle cx='30' cy='14' r='2'/><circle cx='30' cy='46' r='2'/><circle cx='14' cy='30' r='2'/><circle cx='46' cy='30' r='2'/><circle cx='18' cy='18' r='1.4'/><circle cx='42' cy='18' r='1.4'/><circle cx='18' cy='42' r='1.4'/><circle cx='42' cy='42' r='1.4'/></g><g stroke='%238C2E2A' stroke-opacity='0.45' fill='none' stroke-width='0.8'><path d='M30 22 L30 38 M22 30 L38 30'/></g></svg>");
+    background-size: 60px 60px;
+  }
+
+  /* Talavera-style tile */
+  .talavera {
+    background-color: var(--paper);
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'><g fill='none' stroke='%232B4A3E' stroke-width='1.2'><path d='M40 8 C 56 24, 56 56, 40 72 C 24 56, 24 24, 40 8 Z'/><path d='M8 40 C 24 24, 56 24, 72 40 C 56 56, 24 56, 8 40 Z'/></g><g fill='%23C29139'><circle cx='40' cy='40' r='3.5'/></g><g fill='%238C2E2A'><circle cx='40' cy='12' r='1.8'/><circle cx='40' cy='68' r='1.8'/><circle cx='12' cy='40' r='1.8'/><circle cx='68' cy='40' r='1.8'/></g><g stroke='%237A6E3D' stroke-width='0.6' fill='none'><circle cx='40' cy='40' r='22'/></g></svg>");
+    background-size: 80px 80px;
+  }
+
+  /* Wheat / harvest stripe */
+  .wheat {
+    background-color: var(--bone);
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'><g stroke='%237A6E3D' stroke-width='1' fill='none' stroke-linecap='round'><path d='M30 8 L30 52'/><path d='M30 18 L24 14 M30 18 L36 14'/><path d='M30 26 L24 22 M30 26 L36 22'/><path d='M30 34 L24 30 M30 34 L36 30'/><path d='M30 42 L24 38 M30 42 L36 38'/></g><g fill='%23C29139'><ellipse cx='30' cy='14' rx='2' ry='3.2'/><ellipse cx='30' cy='22' rx='2' ry='3.2'/><ellipse cx='30' cy='30' rx='2' ry='3.2'/><ellipse cx='30' cy='38' rx='2' ry='3.2'/></g></svg>");
+    background-size: 60px 60px;
+  }
+
+  /* Scalloped border tile */
+  .scalloped { background-color: var(--cream); position: relative; }
+  .scalloped::before { content:""; position: absolute; inset: 18px; border: 1px solid var(--rule); }
+  .scalloped::after {
+    content:""; position: absolute; inset: 8px;
+    background:
+      radial-gradient(circle at 10px 0px, transparent 8px, var(--brick) 8px 9px, transparent 9px) 0 0 / 20px 20px,
+      radial-gradient(circle at 10px 100%, transparent 8px, var(--brick) 8px 9px, transparent 9px) 0 0 / 20px 20px,
+      radial-gradient(circle at 0 10px, transparent 8px, var(--brick) 8px 9px, transparent 9px) 0 0 / 20px 20px,
+      radial-gradient(circle at 100% 10px, transparent 8px, var(--brick) 8px 9px, transparent 9px) 0 0 / 20px 20px;
+  }
+
+  /* Icon arch */
+  .icon-arch {
+    background: linear-gradient(180deg, rgba(43,74,62,1), rgba(43,74,62,0.92));
+    display: grid; place-items: center;
+    position: relative;
+  }
+  .icon-arch .frame {
+    width: 70%; height: 80%;
+    border: 1.5px solid var(--candle);
+    border-radius: 50% 50% 4px 4px / 30% 30% 4px 4px;
+    position: relative;
+    display: grid; place-items: center;
+    background: radial-gradient(circle at 50% 60%, rgba(212,168,90,0.25), transparent 70%);
+  }
+  .icon-arch .frame::before {
+    content: ""; position: absolute; inset: 6px;
+    border: 0.75px solid var(--candle);
+    border-radius: 50% 50% 4px 4px / 30% 30% 4px 4px;
+    opacity: 0.6;
+  }
+  .icon-arch .frame .a {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 56px;
+    color: var(--candle);
+    line-height: 0.8;
+  }
+  .icon-arch .frame .y {
+    font-family: 'Cinzel', serif;
+    letter-spacing: 0.32em;
+    font-size: 11px;
+    color: var(--candle);
+    margin-top: 8px;
+  }
+
+  /* Compass ornament tile */
+  .compass {
+    background: var(--bordeaux);
+    display: grid; place-items: center;
+  }
+
+  /* ─── Voice & tone ────────────────────────────────────────── */
+  .voice { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 28px; }
+  .voice .card { border: 1px solid var(--rule); background: var(--cream); padding: 28px 32px; }
+  .voice .card h4 {
+    font-family: 'Cinzel', serif;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    font-size: 11px;
+    margin: 0 0 12px;
+  }
+  .voice .yes h4 { color: var(--cypress); }
+  .voice .no h4 { color: var(--brick); }
+  .voice ul { margin: 0; padding-left: 18px; }
+  .voice li { margin-bottom: 6px; }
+
+  .lexicon {
+    margin-top: 32px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 28px;
+  }
+  .lexicon .col h4 {
+    font-family: 'Cinzel', serif;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    font-size: 11px;
+    color: var(--saffron);
+    margin: 0 0 10px;
+  }
+  .lexicon .col p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-style: italic;
+    color: var(--soft-ink);
+    line-height: 1.7;
+  }
+
+  .copy-examples { display: grid; gap: 16px; margin-top: 28px; }
+  .quote {
+    border-left: 2px solid var(--brick);
+    padding: 6px 18px;
+    color: var(--soft-ink);
+    font-style: italic;
+    font-size: 19px;
+  }
+
+  /* ─── Save-the-date card mock ─────────────────────────────── */
+  .std-stage {
+    margin-top: 40px;
+    display: grid;
+    place-items: center;
+    padding: 60px 20px;
+    background:
+      radial-gradient(800px 300px at 50% 50%, rgba(212, 168, 90, 0.14), transparent 70%),
+      repeating-linear-gradient(45deg, rgba(43,34,28,0.025) 0 2px, transparent 2px 14px);
+    border: 1px solid var(--rule);
+  }
+  .std-card {
+    width: min(440px, 100%);
+    background: var(--paper);
+    padding: 56px 44px 48px;
+    text-align: center;
+    position: relative;
+    box-shadow:
+      0 1px 0 rgba(255,255,255,0.6) inset,
+      0 30px 60px -30px rgba(60, 30, 20, 0.55),
+      0 8px 18px -12px rgba(60, 30, 20, 0.3);
+  }
+  .std-card {
+    --scallop: 16px;
+    -webkit-mask:
+      radial-gradient(circle at var(--scallop) var(--scallop), transparent calc(var(--scallop) - 1px), #000 var(--scallop)) top left,
+      radial-gradient(circle at calc(100% - var(--scallop)) var(--scallop), transparent calc(var(--scallop) - 1px), #000 var(--scallop)) top right,
+      radial-gradient(circle at var(--scallop) calc(100% - var(--scallop)), transparent calc(var(--scallop) - 1px), #000 var(--scallop)) bottom left,
+      radial-gradient(circle at calc(100% - var(--scallop)) calc(100% - var(--scallop)), transparent calc(var(--scallop) - 1px), #000 var(--scallop)) bottom right;
+    -webkit-mask-size: 50% 50%;
+    -webkit-mask-repeat: no-repeat;
+  }
+  .std-border {
+    position: relative;
+    padding: 14px;
+    background:
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'><g fill='%238C2E2A' fill-opacity='0.9'><circle cx='30' cy='30' r='3.2'/><circle cx='30' cy='14' r='2'/><circle cx='30' cy='46' r='2'/><circle cx='14' cy='30' r='2'/><circle cx='46' cy='30' r='2'/><circle cx='18' cy='18' r='1.4'/><circle cx='42' cy='18' r='1.4'/><circle cx='18' cy='42' r='1.4'/><circle cx='42' cy='42' r='1.4'/></g></svg>")
+      repeat;
+    background-size: 30px 30px;
+  }
+  .std-inner {
+    background: var(--paper);
+    padding: 44px 24px 36px;
+    position: relative;
+  }
+  .std-inner .top {
+    font-family: 'Cinzel', serif;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: var(--saffron);
+    font-size: 11px;
+  }
+  .std-inner .names {
+    font-family: 'Italiana', serif;
+    font-size: 44px;
+    line-height: 1.05;
+    color: var(--bordeaux);
+    margin: 18px 0 6px;
+  }
+  .std-inner .amp {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 56px;
+    color: var(--brick);
+    line-height: 0.5;
+    display: block;
+    margin: 6px 0 4px;
+  }
+  .std-inner .invite {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--soft-ink);
+    margin: 18px 0 18px;
+  }
+  .std-inner .date {
+    font-family: 'Italiana', serif;
+    font-size: 22px;
+    color: var(--ink);
+    letter-spacing: 0.06em;
+  }
+  .std-inner .formal {
+    margin-top: 14px;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 0.42em;
+    text-transform: uppercase;
+    font-size: 10px;
+    color: var(--saffron);
+  }
+  .std-inner .ornament {
+    margin: 22px auto 0;
+    width: 80px;
+    color: var(--brick);
+  }
+
+  /* ─── Web preview ─────────────────────────────────────────── */
+  .web-preview {
+    margin-top: 36px;
+    border: 1px solid var(--rule);
+    background: var(--cream);
+    padding: 0;
+    overflow: hidden;
+  }
+  .browser-chrome {
+    background: var(--bone);
+    padding: 10px 14px;
+    display: flex; align-items: center; gap: 8px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .browser-chrome .dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(43, 34, 28, 0.25); }
+  .browser-chrome .url {
+    margin-left: 14px;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 0.22em;
+    text-transform: lowercase;
+    font-size: 11px;
+    color: var(--soft-ink);
+  }
+  .hero {
+    padding: 90px 36px 110px;
+    text-align: center;
+    background:
+      radial-gradient(700px 320px at 50% 0%, rgba(212, 168, 90, 0.22), transparent 70%),
+      radial-gradient(800px 400px at 50% 100%, rgba(43, 74, 62, 0.08), transparent 70%),
+      var(--paper);
+    position: relative;
+  }
+  .hero::before {
+    content: ""; position: absolute; inset: 28px;
+    border: 1px solid rgba(167, 134, 75, 0.5);
+    border-radius: 50% 50% 6px 6px / 14% 14% 6px 6px;
+    pointer-events: none;
+  }
+  .hero .menu {
+    display: flex; gap: 28px; justify-content: center;
+    margin-bottom: 50px;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    font-size: 11px;
+    color: var(--soft-ink);
+    position: relative;
+  }
+  .hero h2 { color: var(--bordeaux); font-size: 64px; line-height: 1; margin: 0 0 8px; position: relative; }
+  .hero .amp { font-family: 'Pinyon Script', cursive; font-size: 80px; color: var(--brick); line-height: 0.5; display: block; margin: 4px 0 0; position: relative; }
+  .hero .when { margin-top: 24px; font-style: italic; color: var(--soft-ink); position: relative; }
+  .btn {
+    display: inline-block;
+    margin-top: 28px;
+    padding: 13px 30px;
+    background: var(--bordeaux);
+    color: var(--paper);
+    font-family: 'Cinzel', serif;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    font-size: 11px;
+    text-decoration: none;
+    border: 1px solid var(--bordeaux);
+    transition: background 0.2s ease;
+    position: relative;
+  }
+  .btn:hover { background: var(--brick); }
+
+  /* ─── Footer ──────────────────────────────────────────────── */
+  footer {
+    text-align: center;
+    padding: 60px 0 80px;
+    color: var(--soft-ink);
+    font-style: italic;
+    border-top: 1px solid var(--rule);
+  }
+  footer .amp { font-family: 'Pinyon Script', cursive; font-size: 40px; color: var(--brick); display: block; line-height: 0.6; margin-bottom: 8px; }
+
+  /* ─── Responsive ──────────────────────────────────────────── */
+  @media (max-width: 820px) {
+    .container { padding: 0 28px; }
+    .mood-grid { grid-template-columns: repeat(6, 1fr); }
+    .mood-1, .mood-2, .mood-3, .mood-4, .mood-5 { grid-column: span 6; aspect-ratio: 4 / 3; }
+    .swatch-grid { grid-template-columns: repeat(2, 1fr); }
+    .pattern-grid { grid-template-columns: 1fr; }
+    .voice, .lenses, .lexicon, .triangle { grid-template-columns: 1fr; }
+    .pair-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<main>
+
+<!-- ─── COVER ─────────────────────────────────────────────────── -->
+<section class="cover">
+  <div class="arch"></div>
+  <div style="position:relative;">
+    <div class="inscription" style="font-size:11px; color:var(--saffron);">Save the Date</div>
+    <div class="ornament-row">
+      <span class="rule"></span>
+      <svg class="florette" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+        <circle cx="12" cy="12" r="2" fill="currentColor"/>
+        <circle cx="12" cy="5" r="1.2" fill="currentColor"/>
+        <circle cx="12" cy="19" r="1.2" fill="currentColor"/>
+        <circle cx="5" cy="12" r="1.2" fill="currentColor"/>
+        <circle cx="19" cy="12" r="1.2" fill="currentColor"/>
+      </svg>
+      <span class="rule"></span>
+    </div>
+    <h1>Brooks</h1>
+    <span class="ampersand">&amp;</span>
+    <h1 style="margin-top:8px;">Allison</h1>
+    <div class="subtitle inscription" style="font-size:11px; letter-spacing:0.42em; margin-top:36px;">Brand Guidelines · v2</div>
+    <div class="date">the twenty-fourth &amp; twenty-fifth of October</div>
+    <div class="booklabel">A Wedding · Heirloom Harvest · Desert Supper Club</div>
+  </div>
+</section>
+
+<!-- ─── 01 · THE FEELING ─────────────────────────────────────── -->
+<section>
+  <div class="container">
+    <div class="eyebrow">01 · The Feeling</div>
+    <h2>Santa Fe meets Tuscany meets a New England sporting club.</h2>
+    <p class="lede">
+      A long oak table laid with linen and gingham, candles burning down to the holders, a censer-warm light
+      catching on a gilded icon in the corner of the room. <em>Editorial but familial. Sacramental but unfussy.
+      Old-world hospitality, set in the high desert in autumn.</em>
+    </p>
+
+    <div class="lenses">
+      <div class="lens"><div class="h">Heirloom Harvest</div><div class="d">Pomegranates, figs, dried wheat, a brass bowl of persimmons on the sideboard.</div></div>
+      <div class="lens"><div class="h">Desert Supper Club</div><div class="d">String lights over an outdoor table, agave silhouettes, mezcal in cut crystal.</div></div>
+      <div class="lens"><div class="h">Refined Ranch</div><div class="d">Suede, denim done well, a turquoise pinky ring at a black-tie sleeve.</div></div>
+      <div class="lens"><div class="h">Spanish Colonial Autumn</div><div class="d">Adobe walls, talavera tile, wrought iron, light through a deep-set window.</div></div>
+      <div class="lens"><div class="h">Candlelit Americana</div><div class="d">Hand-dipped tapers in brass, a wool blanket on a bench, a fiddle warming up.</div></div>
+      <div class="lens"><div class="h">Old-world Hospitality</div><div class="d">Place cards in cursive ink. Bread already on the table when you sit down.</div></div>
+      <div class="lens"><div class="h">Editorial but Familial</div><div class="d">Composed like a Cabana spread, felt like Sunday at grandmother's.</div></div>
+      <div class="lens"><div class="h">Orthodox Sacramental Beauty</div><div class="d">Gilded reverence, deep saturated color, the seriousness of a ceremony you remember.</div></div>
+      <div class="lens"><div class="h">Convivial Countryside Dinner</div><div class="d">Long table, mismatched chairs, second helpings, the laugh that goes on too long.</div></div>
+      <div class="lens"><div class="h">Anchor Words</div><div class="d">Classic. Ornate. Deep desert colors. Texture. Checkered.</div></div>
+    </div>
+
+    <div class="words" style="margin-top:40px;">
+      <div class="word">Classic<span class="dot"></span></div>
+      <div class="word">Ornate<span class="dot"></span></div>
+      <div class="word">Sacramental<span class="dot"></span></div>
+      <div class="word">Harvest<span class="dot"></span></div>
+      <div class="word">Convivial<span class="dot"></span></div>
+    </div>
+
+    <div class="mood-grid" style="margin-top:48px;">
+      <figure class="mood-1"><img src="Wedding3.png" alt="Gingham tables, wildflowers, woven pendant lamps — the supper-club scene" /></figure>
+      <figure class="mood-2"><img src="Wedding.png" alt="Scalloped letterpress invitations with burgundy block-print florals" /></figure>
+      <figure class="mood-3"><img src="Wedding5.png" alt="Bridesmaid dresses ranging from wine to dusty rose" /></figure>
+      <figure class="mood-4"><img src="Wedding2.png" alt="Vintage engraved cherub plate — sacramental reference" /></figure>
+      <figure class="mood-5"><img src="Wedding4.png" alt="Antique ornithological bird prints on silver bases — sporting club reference" /></figure>
+    </div>
+
+    <h3 style="margin-top:64px;">The Triangulation</h3>
+    <div class="triangle">
+      <div class="corner">
+        <div class="place">Santa Fe</div>
+        <div class="what">Of the desert.</div>
+        <ul>
+          <li>Adobe, viga ceilings, deep-set windows</li>
+          <li>Saffron, terracotta, sky at dusk</li>
+          <li>Silver, turquoise (sparingly)</li>
+          <li>Worn leather, hand-loomed wool</li>
+        </ul>
+      </div>
+      <div class="corner">
+        <div class="place">Tuscany</div>
+        <div class="what">Of the table.</div>
+        <ul>
+          <li>Ochre plaster, cypress, olive</li>
+          <li>Long lunches, sun-warmed stone</li>
+          <li>Bordeaux, cured meats, fig</li>
+          <li>Gilt frames, frescoed saints</li>
+        </ul>
+      </div>
+      <div class="corner">
+        <div class="place">Sporting Club</div>
+        <div class="what">Of the room.</div>
+        <ul>
+          <li>Hunter green, brass, mahogany</li>
+          <li>Gingham, tartan, monogrammed napkins</li>
+          <li>Audubon prints, taxidermy done well</li>
+          <li>A library you actually read in</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── 02 · COLOR ───────────────────────────────────────────── -->
+<section>
+  <div class="container">
+    <div class="eyebrow">02 · Color</div>
+    <h2>A palette baked in.</h2>
+    <p class="lede">
+      Four anchors carry every composition: Bordeaux wine, Brick red, Cypress green, and Saffron gold.
+      Earthen tones from Santa Fe to Tuscany warm the middle. Soft bloom holds the romance. Beeswax candlelight
+      and antique gold do the sacramental work.
+    </p>
+
+    <div class="palette-group">
+      <h3>Primary · Four Anchors</h3>
+      <div class="swatch-grid">
+        <div class="swatch">
+          <div class="chip" style="background:var(--bordeaux);"></div>
+          <div class="meta"><div class="name">Bordeaux</div><div class="hex">#5C1A1B</div><div class="role">deepest wine · display, buttons, ceremony</div></div>
+        </div>
+        <div class="swatch">
+          <div class="chip" style="background:var(--brick);"></div>
+          <div class="meta"><div class="name">Brick</div><div class="hex">#8C2E2A</div><div class="role">block-print red · ornaments, accents</div></div>
+        </div>
+        <div class="swatch">
+          <div class="chip" style="background:var(--cypress);"></div>
+          <div class="meta"><div class="name">Cypress</div><div class="hex">#2B4A3E</div><div class="role">sacramental + sporting green · grounding</div></div>
+        </div>
+        <div class="swatch">
+          <div class="chip" style="background:var(--saffron);"></div>
+          <div class="meta"><div class="name">Saffron</div><div class="hex">#C29139</div><div class="role">harvest gold · eyebrows, halos, ribbons</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="palette-group">
+      <h3>Earthen · Santa Fe × Tuscany</h3>
+      <div class="swatch-grid">
+        <div class="swatch">
+          <div class="chip" style="background:var(--terracotta);"></div>
+          <div class="meta"><div class="name">Terracotta</div><div class="hex">#B8553A</div><div class="role">sun-baked clay · supporting accent</div></div>
+        </div>
+        <div class="swatch">
+          <div class="chip" style="background:var(--persimmon);"></div>
+          <div class="meta"><div class="name">Persimmon</div><div class="hex">#C9602D</div><div class="role">wildflower · used sparingly</div></div>
+        </div>
+        <div class="swatch">
+          <div class="chip" style="background:var(--adobe);"></div>
+          <div class="meta"><div class="name">Adobe</div><div class="hex">#D4A87E</div><div class="role">warm plaster · soft fills, place cards</div></div>
+        </div>
+        <div class="swatch">
+          <div class="chip" style="background:var(--olive);"></div>
+          <div class="meta"><div class="name">Olive</div><div class="hex">#7A6E3D</div><div class="role">sun-faded bronze · botanical, wheat</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="palette-group">
+      <h3>Soft Bloom · Romantic Mid-tones</h3>
+      <div class="swatch-grid">
+        <div class="swatch">
+          <div class="chip" style="background:var(--dusty-rose);"></div>
+          <div class="meta"><div class="name">Dusty Rose</div><div class="hex">#C68B86</div><div class="role">ribbons, soft fills</div></div>
+        </div>
+        <div class="swatch">
+          <div class="chip" style="background:var(--mauve);"></div>
+          <div class="meta"><div class="name">Mauve</div><div class="hex">#9C5F66</div><div class="role">bridesmaid family · quiet support</div></div>
+        </div>
+        <div class="swatch">
+          <div class="chip" style="background:var(--blush);"></div>
+          <div class="meta"><div class="name">Blush</div><div class="hex">#E5C7BD</div><div class="role">tinted field · backgrounds</div></div>
+        </div>
+        <div class="swatch">
+          <div class="chip" style="background:var(--candle);"></div>
+          <div class="meta"><div class="name">Candle Gold</div><div class="hex">#D4A85A</div><div class="role">beeswax light · glow, halos</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="palette-group">
+      <h3>Parchment · Ink · Metal</h3>
+      <div class="swatch-grid">
+        <div class="swatch">
+          <div class="chip" style="background:var(--paper); border-bottom:1px solid var(--rule);"></div>
+          <div class="meta"><div class="name">Paper</div><div class="hex">#FAF3E4</div><div class="role">primary page surface</div></div>
+        </div>
+        <div class="swatch">
+          <div class="chip" style="background:var(--parchment); border-bottom:1px solid var(--rule);"></div>
+          <div class="meta"><div class="name">Parchment</div><div class="hex">#F3E8D2</div><div class="role">invitation card stock</div></div>
+        </div>
+        <div class="swatch">
+          <div class="chip" style="background:var(--ink);"></div>
+          <div class="meta"><div class="name">Antique Ink</div><div class="hex">#2B221C</div><div class="role">body copy · near-black with warmth</div></div>
+        </div>
+        <div class="swatch">
+          <div class="chip" style="background:var(--gold);"></div>
+          <div class="meta"><div class="name">Antique Gold</div><div class="hex">#A7864B</div><div class="role">icon frames · structural metal</div></div>
+        </div>
+      </div>
+    </div>
+
+    <p style="margin-top:32px; font-style:italic; color:var(--soft-ink); max-width:680px;">
+      <strong class="inscription" style="font-size:11px; color:var(--saffron);">Rule of thumb · </strong>
+      Lead with one anchor (Bordeaux, Brick, Cypress, or Saffron) and let the earthen tones support it.
+      Antique Gold and Candle Gold are <em>structural</em> here — frame, edge, halo — not sprinkled as glitter.
+      Persimmon and pure Saffron should never exceed ~10% of any composition.
+    </p>
+  </div>
+</section>
+
+<!-- ─── 03 · TYPOGRAPHY ──────────────────────────────────────── -->
+<section>
+  <div class="container">
+    <div class="eyebrow">03 · Typography</div>
+    <h2>One family, four voices.</h2>
+    <p class="lede">
+      An ecclesiastical Roman for inscriptions, a delicate display serif for monumental moments, a
+      calligraphic script for the personal flourish, and a workhorse Garamond — set on parchment with
+      old-style figures, small caps, and italics that lean like candlelight.
+    </p>
+
+    <div class="type-stack">
+
+      <div class="specimen">
+        <div class="pair-grid">
+          <dl class="meta">
+            <dt>Inscription</dt>
+            <dd>Cinzel</dd>
+            <dt>Use for</dt>
+            <dd>Sacramental moments, eyebrows, buttons, table numbers, navigation</dd>
+            <dt>Tracking</dt>
+            <dd>+32% always — like letters carved in stone</dd>
+            <dt>Don't</dt>
+            <dd>Set body copy in it. Ever.</dd>
+          </dl>
+          <div>
+            <div class="label">Inscription</div>
+            <div class="sample-inscription">Save · The · Date · MMXXVI</div>
+            <div class="sample-inscription" style="margin-top:14px; color:var(--cypress);">Ceremony &middot; Supper &middot; Dancing</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="specimen">
+        <div class="pair-grid">
+          <dl class="meta">
+            <dt>Display</dt>
+            <dd>Italiana</dd>
+            <dt>Use for</dt>
+            <dd>Names, section titles, dates set monumentally</dd>
+            <dt>Weight</dt>
+            <dd>Regular only</dd>
+          </dl>
+          <div>
+            <div class="label">Display</div>
+            <div class="sample-display">Brooks &amp; Allison</div>
+            <div class="alphabet">A B C D E F G H I J K L M N O P Q R S T U V W X Y Z &nbsp; &amp;</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="specimen">
+        <div class="pair-grid">
+          <dl class="meta">
+            <dt>Script</dt>
+            <dd>Pinyon Script</dd>
+            <dt>Use for</dt>
+            <dd>Ampersands, single-word flourishes, signatures, place cards</dd>
+            <dt>Don't</dt>
+            <dd>Set entire sentences in script</dd>
+          </dl>
+          <div>
+            <div class="label">Script</div>
+            <div class="sample-script">with all our love</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="specimen">
+        <div class="pair-grid">
+          <dl class="meta">
+            <dt>Body &amp; Italic</dt>
+            <dd>Cormorant Garamond</dd>
+            <dt>Use for</dt>
+            <dd>Paragraph copy, invitations, web body, menus</dd>
+            <dt>Sizes</dt>
+            <dd>17–19px web · 11–14pt print</dd>
+            <dt>Italic</dt>
+            <dd>For lede paragraphs and quiet emphasis</dd>
+          </dl>
+          <div>
+            <div class="label">Body</div>
+            <p class="sample-body">
+              We are getting married in the high desert this autumn, at the harvest, by candlelight.
+              <em>There will be a long table, more than enough wine, and bread already on it when you sit down.</em>
+              The ceremony will be brief and very serious; the supper will be neither.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="specimen">
+        <div class="pair-grid">
+          <dl class="meta">
+            <dt>Small Caps</dt>
+            <dd>Cormorant SC</dd>
+            <dt>Use for</dt>
+            <dd>Secondary labels, captions, footers, signature blocks</dd>
+            <dt>Tracking</dt>
+            <dd>+22% (always letterspaced)</dd>
+          </dl>
+          <div>
+            <div class="label">Small Caps</div>
+            <div class="sample-caps">Brooks &amp; Allison · October Twenty-Fifth · A Convivial Supper</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── 04 · PATTERN & TEXTURE ───────────────────────────────── -->
+<section>
+  <div class="container">
+    <div class="eyebrow">04 · Pattern &amp; Texture</div>
+    <h2>The textures we keep returning to.</h2>
+    <p class="lede">
+      A block-print floret for borders and backgrounds. Gingham for the table. A talavera medallion for the
+      colonial-sacramental moments. A wheat stalk for the harvest. A scalloped edge wherever paper meets the eye.
+      An icon-arch for the most reverent moments.
+    </p>
+
+    <div class="pattern-grid">
+      <div class="pattern blockprint"><div class="caption">Block-print Floret</div></div>
+      <div class="pattern gingham bordeaux"><div class="caption">Gingham · Bordeaux</div></div>
+      <div class="pattern gingham cypress"><div class="caption">Gingham · Cypress</div></div>
+      <div class="pattern talavera"><div class="caption" style="color:var(--bordeaux); text-shadow:none;">Talavera Medallion</div></div>
+      <div class="pattern wheat"><div class="caption" style="color:var(--olive); text-shadow:none;">Wheat &middot; Harvest</div></div>
+      <div class="pattern scalloped"><div class="caption" style="color:var(--bordeaux); text-shadow:none;">Scalloped Edge</div></div>
+      <div class="pattern icon-arch">
+        <div class="frame">
+          <div class="a">B&nbsp;&amp;&nbsp;A</div>
+          <div class="y">A.D. MMXXVI</div>
+        </div>
+        <div class="caption">Icon Arch</div>
+      </div>
+      <div class="pattern gingham terracotta"><div class="caption">Gingham · Terracotta</div></div>
+      <div class="pattern compass">
+        <svg viewBox="0 0 200 200" width="70%" style="opacity:0.95;">
+          <g fill="none" stroke="#D4A85A" stroke-width="1.2">
+            <circle cx="100" cy="100" r="60"/>
+            <circle cx="100" cy="100" r="40"/>
+            <path d="M100 30 L100 170 M30 100 L170 100"/>
+            <path d="M50 50 L150 150 M150 50 L50 150"/>
+          </g>
+          <g fill="#D4A85A">
+            <circle cx="100" cy="100" r="4"/>
+            <circle cx="100" cy="40" r="2.5"/>
+            <circle cx="100" cy="160" r="2.5"/>
+            <circle cx="40" cy="100" r="2.5"/>
+            <circle cx="160" cy="100" r="2.5"/>
+          </g>
+        </svg>
+        <div class="caption">Compass Ornament</div>
+      </div>
+    </div>
+
+    <p style="margin-top:28px; font-style:italic; color:var(--soft-ink); max-width:720px;">
+      <strong class="inscription" style="font-size:11px; color:var(--saffron);">When to use what · </strong>
+      Floret for repeating borders and invitation backgrounds. Gingham (Bordeaux for ceremony, Cypress for the supper,
+      Terracotta for daytime) at the table. Talavera medallion for the most colonial-sacramental moments — programs,
+      ceremony covers. Wheat for harvest signage, menus, late-night cards. Scallop on every card edge. Icon Arch
+      and Compass for the most reverent applications: ceremony program cover, the home of the website.
+    </p>
+  </div>
+</section>
+
+<!-- ─── 05 · VOICE & TONE ────────────────────────────────────── -->
+<section>
+  <div class="container">
+    <div class="eyebrow">05 · Voice &amp; Tone</div>
+    <h2>Formal in form. Warm in spirit.</h2>
+    <p class="lede">
+      Old-world hospitality, written down. The cadence of someone who has thought about you for a long time
+      and has set a place at the table — never the legalese of a formal invitation, never the chirp of a brunch flyer.
+      Read every line aloud. If it doesn't sound like an invitation you'd accept, it isn't one yet.
+    </p>
+
+    <div class="voice">
+      <div class="card yes">
+        <h4>Sounds like us</h4>
+        <ul>
+          <li>Long, unhurried sentences with a comma where you'd pause.</li>
+          <li>Specific images — cottonwoods, gingham, a long table, late light, the cypress.</li>
+          <li>Old-fashioned date forms: <em>the twenty-fifth of October</em>.</li>
+          <li>Sacramental verbs used sincerely: <em>gather, bless, feast, witness, keep</em>.</li>
+          <li>Quiet humor; never a punchline.</li>
+          <li>Direct address: <em>you are invited</em>, not <em>guests will be welcomed</em>.</li>
+          <li>Hospitable specificity: <em>come early. Stay late. Bread will be on the table.</em></li>
+        </ul>
+      </div>
+      <div class="card no">
+        <h4>Not us</h4>
+        <ul>
+          <li>Hashtags, emoji, exclamation points.</li>
+          <li>Corporate verbs: <em>kindly RSVP at your earliest convenience</em>.</li>
+          <li>Wedding-industrial clichés: <em>tying the knot, our special day, big day vibes</em>.</li>
+          <li>Sans-serif anything.</li>
+          <li>Pure white, fire-engine red, pastel pinks.</li>
+          <li>Western-cosplay clichés: <em>yeehaw, hitchin', cowboy boots emoji</em>.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="lexicon">
+      <div class="col">
+        <h4>Words we like</h4>
+        <p>
+          gather, feast, harvest, supper, sacrament, bless, keep, witness, table, candle, cypress, ochre,
+          parchment, vesper, conviviality, hospitality, heirloom, ranch, chapel, oak, dusk, blessing,
+          ceremony, the twenty-fifth, autumn.
+        </p>
+      </div>
+      <div class="col">
+        <h4>Words we don't</h4>
+        <p>
+          big day, bash, party hard, wedding hashtag, plus-one, drinks reception, VIP, save-the-date emoji,
+          live laugh love, modern minimalist, sleek, on-trend, content, photo opp, deets, sesh.
+        </p>
+      </div>
+    </div>
+
+    <h3 style="margin-top:48px;">Copy examples</h3>
+    <div class="copy-examples">
+      <div class="quote">"Save the date — the twenty-fifth of October. A small ceremony in the late afternoon and a long supper after."</div>
+      <div class="quote">"Come for the blessing. Stay for the second helping."</div>
+      <div class="quote">"There will be candles, cypress, and more than enough wine. The full invitation will find you in the spring."</div>
+      <div class="quote">"With every kind of love, Brooks &amp; Allison."</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── 06 · THE SAVE-THE-DATE CARD ──────────────────────────── -->
+<section>
+  <div class="container">
+    <div class="eyebrow">06 · Applied · Save-the-Date Card</div>
+    <h2>The card itself.</h2>
+    <p class="lede">
+      Scalloped edge, block-print floret border, Italiana names with a Pinyon ampersand, a single line of italic
+      Garamond, and the date set in Cinzel small caps. Like a card that could have been pressed in 1908 — or
+      tomorrow.
+    </p>
+
+    <div class="std-stage">
+      <div class="std-card">
+        <div class="std-border">
+          <div class="std-inner">
+            <div class="top">Save · The · Date</div>
+            <div class="names">Brooks</div>
+            <span class="amp">&amp;</span>
+            <div class="names">Allison</div>
+            <div class="invite">are to be married</div>
+            <div class="date">October XXIV · XXV</div>
+            <div class="formal">Invitation to follow</div>
+            <svg class="ornament" viewBox="0 0 80 20">
+              <g fill="currentColor">
+                <circle cx="10" cy="10" r="1.2"/>
+                <circle cx="20" cy="10" r="1.2"/>
+                <circle cx="40" cy="10" r="2.4"/>
+                <circle cx="60" cy="10" r="1.2"/>
+                <circle cx="70" cy="10" r="1.2"/>
+              </g>
+              <g stroke="currentColor" stroke-width="0.6" fill="none">
+                <line x1="26" y1="10" x2="34" y2="10"/>
+                <line x1="46" y1="10" x2="54" y2="10"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── 07 · WEBSITE PREVIEW ─────────────────────────────────── -->
+<section>
+  <div class="container">
+    <div class="eyebrow">07 · Applied · Website Hero</div>
+    <h2>How it looks on the web.</h2>
+    <p class="lede">
+      The same vocabulary, larger canvas. Parchment background, candle-gold radial halo at the top of an arched
+      frame, Italiana display, Cinzel navigation, Bordeaux button. Built to feel like opening the door to a
+      candlelit room.
+    </p>
+
+    <div class="web-preview">
+      <div class="browser-chrome">
+        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+        <span class="url">brooksandallison.com</span>
+      </div>
+      <div class="hero">
+        <nav class="menu">
+          <span>Our Story</span>
+          <span>Travel</span>
+          <span>Schedule</span>
+          <span>Registry</span>
+          <span>RSVP</span>
+        </nav>
+        <div class="inscription" style="font-size:11px; letter-spacing:0.5em; color:var(--saffron);">Save · The · Date</div>
+        <h2 style="margin-top:18px;">Brooks</h2>
+        <span class="amp">&amp;</span>
+        <h2>Allison</h2>
+        <div class="when">the twenty-fourth &amp; twenty-fifth of October &nbsp;·&nbsp; in the high desert, at the harvest</div>
+        <a class="btn" href="#">Add to Calendar</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ───────────────────────────────────────────────── -->
+<footer>
+  <span class="amp">&amp;</span>
+  Brand Guidelines · v2 · Drafted with love for Brooks &amp; Allison.
+</footer>
+
+</main>
+</body>
+</html>
