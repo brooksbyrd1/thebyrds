@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>12 Things I Wish I'd Known · First Visit to an Orthodox Church</title>
+<meta name="description" content="Frederica Mathewes-Green's introduction to Orthodox worship — what to expect on a first visit." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Cormorant+SC:wght@300;400;500;600&family=Italiana&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper:       #FFFFFF;
+    --parchment:   #F3E8D2;
+    --bone:        #E6D7BB;
+    --ink:         #2B221C;
+    --soft-ink:    #4A3E34;
+    --quiet-ink:   #8A7E73;
+    --accent:      #8C2E2A;
+    --rule:        rgba(43, 34, 28, 0.16);
+    --rule-soft:   rgba(43, 34, 28, 0.08);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    color: var(--ink);
+    background: var(--paper);
+    font-size: 19px;
+    line-height: 1.75;
+    letter-spacing: 0.005em;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body::before {
+    content: "";
+    position: fixed; inset: 0;
+    pointer-events: none; z-index: 0;
+    opacity: 0.3;
+    background-image:
+      radial-gradient(rgba(60, 40, 25, 0.04) 1px, transparent 1px),
+      radial-gradient(rgba(60, 40, 25, 0.03) 1px, transparent 1px);
+    background-size: 3px 3px, 7px 7px;
+    background-position: 0 0, 1px 2px;
+  }
+
+  main, header, footer { position: relative; z-index: 1; }
+
+  .article {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 80px 32px 100px;
+  }
+
+  .back-link {
+    font-family: 'Cormorant SC', serif;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    font-size: 11px;
+    color: var(--quiet-ink);
+    text-decoration: none;
+    border: none;
+    display: inline-block;
+    margin-bottom: 56px;
+    transition: color 0.2s ease;
+  }
+  .back-link:hover { color: var(--accent); }
+  .back-link::before { content: "← "; }
+
+  .article-eyebrow {
+    font-family: 'Cormorant SC', serif;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    font-size: 11px;
+    color: var(--accent);
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-family: 'Italiana', serif;
+    font-weight: 400;
+    font-size: clamp(40px, 6vw, 64px);
+    line-height: 1.05;
+    letter-spacing: 0.01em;
+    color: var(--ink);
+    margin: 0 0 18px;
+  }
+
+  .byline {
+    font-style: italic;
+    color: var(--soft-ink);
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .source {
+    font-family: 'Cormorant SC', serif;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    font-size: 10px;
+    color: var(--quiet-ink);
+    margin-bottom: 48px;
+  }
+
+  .ornament {
+    display: flex; align-items: center; justify-content: center; gap: 14px;
+    margin: 8px 0 56px;
+    color: var(--accent);
+  }
+  .ornament .rule { width: 60px; height: 1px; background: currentColor; opacity: 0.5; }
+  .ornament .dot { width: 5px; height: 5px; border-radius: 50%; background: currentColor; }
+
+  h2 {
+    font-family: 'Italiana', serif;
+    font-weight: 400;
+    font-size: clamp(26px, 3.5vw, 34px);
+    line-height: 1.2;
+    color: var(--ink);
+    margin: 56px 0 18px;
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+  }
+  h2 .num {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-feature-settings: "lnum";
+    font-size: 0.55em;
+    color: var(--accent);
+    min-width: 1.5em;
+  }
+
+  h3.lede {
+    font-family: 'Italiana', serif;
+    font-weight: 400;
+    font-size: clamp(22px, 3vw, 28px);
+    line-height: 1.25;
+    color: var(--ink);
+    margin: 0 0 28px;
+  }
+
+  p { margin: 0 0 20px; max-width: 62ch; }
+  em { font-style: italic; color: var(--soft-ink); }
+
+  .footnote {
+    margin-top: 72px;
+    padding-top: 28px;
+    border-top: 1px solid var(--rule-soft);
+    font-style: italic;
+    color: var(--quiet-ink);
+    font-size: 15px;
+  }
+
+  footer {
+    text-align: center;
+    padding: 60px 24px;
+    border-top: 1px solid var(--rule);
+    color: var(--quiet-ink);
+    font-style: italic;
+    font-size: 14px;
+  }
+  footer .amp {
+    font-family: 'Italiana', serif;
+    font-style: italic;
+    font-size: 36px;
+    color: var(--accent);
+    display: block;
+    line-height: 0.8;
+    margin-bottom: 12px;
+  }
+
+  @media (max-width: 600px) {
+    .article { padding: 56px 24px 80px; }
+    h2 { gap: 12px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
+</style>
+</head>
+<body>
+
+<main class="article">
+  <a href="index.html#orthodox" class="back-link">Back to the wedding site</a>
+
+  <div class="article-eyebrow">First Visit to an Orthodox Church</div>
+  <h1>12 Things I Wish I'd Known…</h1>
+  <div class="byline">by Frederica Mathewes-Green</div>
+  <div class="source">Reprinted with attribution · Conciliar Press</div>
+
+  <div class="ornament">
+    <span class="rule"></span>
+    <span class="dot"></span>
+    <span class="rule"></span>
+  </div>
+
+  <p>Orthodox worship is different! Some of these differences are apparent, if perplexing, from the first moment you walk in a church. Others become noticeable only over time. Here is some information that may help you feel more at home in Orthodox worship — twelve things I wish I'd known before my first visit to an Orthodox church.</p>
+
+  <h2><span class="num">01</span><span>What's all this commotion?</span></h2>
+  <p>During the early part of the service the church may seem to be in a hubbub, with people walking up to the front of the church, praying in front of the iconostasis (the standing icons in front of the altar), kissing things and lighting candles, even though the service is already going on. In fact, when you came in the service was already going on, although the sign outside clearly said "Divine Liturgy, 9:30." You felt embarrassed to apparently be late, but these people are even later, and they're walking all around inside the church. What's going on here?</p>
+  <p>In an Orthodox church there is only one Eucharistic service (Divine Liturgy) per Sunday, and it is preceded by an hour-long service of Matins (or Orthros) and several short preparatory services before that. There is no break between these services — one begins as soon as the previous ends, and posted starting times are just educated guesses. Altogether, the priest will be at the altar on Sunday morning for over three hours, "standing in the flame," as one Orthodox priest put it.</p>
+  <p>As a result of this state of continuous flow, there is no point at which everyone is sitting quietly in a pew waiting for the entrance hymn to start, glancing at their watches approaching 9:30. Orthodox worshippers arrive at any point from the beginning of Matins through the early part of the Liturgy, a span of well over an hour. No matter when they arrive, something is sure to be already going on, so Orthodox don't let this hamper them from going through the private prayers appropriate to just entering a church. This is distracting to newcomers, and may even seem disrespectful, but soon you begin to recognize it as an expression of a faith that is not merely formal but very personal. Of course, there is still no good excuse for showing up after 9:30, but punctuality is unfortunately one of the few virtues many Orthodox lack.</p>
+
+  <h2><span class="num">02</span><span>Stand up, stand up for Jesus.</span></h2>
+  <p>In the Orthodox tradition, the faithful stand up for nearly the entire service. Really. In some Orthodox churches, there won't even be any chairs, except a few scattered at the edges of the room for those who need them. Expect variation in practice: some churches, especially those that bought already-existing church buildings, will have well-used pews. In any case, if you find the amount of standing too challenging you're welcome to take a seat. No one minds or probably even notices. Long-term standing gets easier with practice.</p>
+
+  <h2><span class="num">03</span><span>In this sign.</span></h2>
+  <p>To say that we make the sign of the cross frequently would be an understatement. We sign ourselves whenever the Trinity is invoked, whenever we venerate the cross or an icon, and on many other occasions in the course of the Liturgy. But people aren't expected to do everything the same way. Some people cross themselves three times in a row, and some finish by sweeping their right hand to the floor. On first entering a church people may come up to an icon, make a "metania" — crossing themselves and bowing with right hand to the floor — twice, then kiss the icon, then make one more metania. This becomes familiar with time, but at first it can seem like secret-handshake stuff that you are sure to get wrong. Don't worry, you don't have to follow suit.</p>
+  <p>We cross with our right hands from right to left (push, not pull), the opposite of Roman Catholics and high-church Protestants. We hold our hands in a prescribed way: thumb and first two fingertips pressed together, last two fingers pressed down to the palm. Here as elsewhere, the Orthodox impulse is to make everything we do reinforce the Faith. Can you figure out the symbolism? (Three fingers together for the Trinity; two fingers brought down to the palm for the two natures of Christ, and his coming down to earth.) This, too, takes practice. A beginner's imprecise arrangement of fingers won't get you denounced as a heretic.</p>
+
+  <h2><span class="num">04</span><span>What, no kneelers?</span></h2>
+  <p>Generally, we don't kneel. We do sometimes prostrate. This is not like prostration in the Roman Catholic tradition, lying out flat on the floor. To make a prostration we kneel, place our hands on the floor and touch our foreheads down between our hands. It's just like those photos of middle-eastern worship, which look to Westerners like a sea of behinds. At first prostration feels embarrassing, but no one else is embarrassed, so after a while it feels OK. Ladies will learn that full skirts are best for prostrations, as flat shoes are best for standing.</p>
+  <p>Sometimes we do this and get right back up again, as during the prayer of St. Ephraim the Syrian, which is used frequently during Lent. Other times we get down and stay there awhile, as some congregations do during part of the Eucharistic prayer.</p>
+  <p>Not everyone prostrates. Some kneel, some stand with head bowed; in a pew they might slide forward and sit crouched over. Standing there feeling awkward is all right too. No one will notice if you don't prostrate. In Orthodoxy there is a wider acceptance of individualized expressions of piety, rather than a sense that people are watching you and getting offended if you do it wrong.</p>
+  <p>One former Episcopal priest said that seeing people prostrate themselves was one of the things that made him most eager to become Orthodox. He thought, <em>"That's how we should be before God."</em></p>
+
+  <h2><span class="num">05</span><span>With love and kisses.</span></h2>
+  <p>We kiss stuff. When we first come into the church, we kiss the icons (Jesus on the feet and other saints on the hands, ideally). You'll also notice that some kiss the chalice, some kiss the edge of the priest's vestment as he passes by, the acolytes kiss his hand when they give him the censer, and we all line up to kiss the cross at the end of the service. When we talk about "venerating" something we usually mean crossing ourselves and kissing it.</p>
+  <p>We kiss each other before we take communion ("Greet one another with a kiss of love," 1 Peter 5:14). When Roman Catholics or high-church Protestants "pass the peace," they give a hug, handshake, or peck on the cheek; that's how Westerners greet each other. In Orthodoxy different cultures are at play: Greeks and Arabs kiss on two cheeks, and Slavs come back again for a third. Follow the lead of those around you and try not to bump your nose.</p>
+  <p>The usual greeting is "Christ is in our midst" and response, "He is and shall be." Don't worry if you forget what to say. The greeting is not the one familiar to Episcopalians, "The peace of the Lord be with you." Nor is it "Hi, nice church you have here." Exchanging the kiss of peace is a liturgical act, a sign of mystical unity. Chatting and fellowship is for later.</p>
+
+  <h2><span class="num">06</span><span>Blessed bread and consecrated bread.</span></h2>
+  <p>Only Orthodox may take communion, but anyone may have some of the blessed bread. Here's how it works: the round communion loaf, baked by a parishioner, is imprinted with a seal. In the preparation service before the Liturgy, the priest cuts out a section of the seal and sets it aside; it is called the "Lamb". The rest of the bread is cut up and placed in a large basket, and blessed by the priest.</p>
+  <p>During the eucharistic prayer, the Lamb is consecrated to be the Body of Christ, and the chalice of wine is consecrated as His Blood. Here's the surprising part: the priest places the "Lamb" in the chalice with the wine. When we receive communion, we file up to the priest, standing and opening our mouths wide while he gives us a fragment of the wine-soaked bread from a golden spoon. He also prays over us, calling us by our first name or the saint-name which we chose when we were baptized or chrismated (received into the church by anointing with blessed oil).</p>
+  <p>As we file past the priest, we come to an altar boy holding the basket of blessed bread. People will take portions for themselves and for visitors and non-Orthodox friends around them. If someone hands you a piece of blessed bread, do not panic; it is not the eucharistic Body. It is a sign of fellowship.</p>
+  <p>Visitors are sometimes offended that they are not allowed to receive communion. Orthodox believe that receiving communion is broader than me-and-Jesus; it acknowledges faith in historic Orthodox doctrine, obedience to a particular Orthodox bishop, and a commitment to a particular Orthodox worshipping community. There's nothing exclusive about this; everyone is invited to make this commitment to the Orthodox Church. But the Eucharist is the Church's treasure, and it is reserved for those who have united themselves with the Church. An analogy could be to reserving marital relations until after the wedding.</p>
+  <p>We also handle the Eucharist with more gravity than many denominations do, further explaining why we guard it from common access. We believe it is truly the Body and Blood of Christ. We ourselves do not receive communion unless we are making regular confession of our sins to a priest and are at peace with other communicants. We fast from all food and drink — yes, even a morning cup of coffee — from midnight the night before communion.</p>
+  <p>This leads to the general topic of fasting. When newcomers learn of the Orthodox practice, their usual reaction is, "You must be kidding." We fast from meat, fish, dairy products, wine and olive oil nearly every Wednesday and Friday, and during four other periods during the year, the longest being Great Lent before Pascha (Easter). Altogether this adds up to nearly half the year. Here, as elsewhere, expect great variation. With the counsel of their priest, people decide to what extent they can keep these fasts, both physically and spiritually — attempting too much rigor too soon breeds frustration and defeat. Nobody's fast is anyone else's business. As St. John Chrysostom says in his beloved Paschal sermon, everyone is welcomed to the feast whether they fasted or not: <em>"You sober and you heedless, honor the day…Rejoice today, both you who have fasted and you who have disregarded the fast."</em></p>
+  <p>The important point is that the fast is not rigid rules that you break at grave risk, nor is it a punishment for sin. Fasting is exercise to stretch and strengthen us, medicine for our souls' health. In consultation with your priest as your spiritual doctor, you can arrive at a fasting schedule that will stretch but not break you. Next year you may be ready for more. In fact, as time goes by, and as they experience the camaraderie of fasting together with a loving community, most people discover they start relishing the challenge.</p>
+
+  <h2><span class="num">07</span><span>Where's the General Confession?</span></h2>
+  <p>In our experience, we don't have any general sins; they're all quite specific. There is no complete confession-prayer in the Liturgy. Orthodox are expected to be making regular, private confession to their priest.</p>
+  <p>The role of the pastor is much more that of a spiritual father than it is in other denominations. He is not called by his first name alone, but referred to as "Father Firstname." His wife also holds a special role as parish mother, and she gets a title too, though it varies from one culture to another: either "Khouria" (Arabic), or "Presbytera" (Greek), both of which mean "priest's wife;" or "Matushka" (Russian), which means "Mama."</p>
+  <p>Another difference you may notice is in the Nicene Creed, which may be said or sung, depending on the parish. If we are saying that the Holy Spirit proceeds from the Father, and you from force of habit add, "and the Son," you will be alone. The "filioque" was added to the Creed some six hundred years after it was written, and we adhere to the original. High-church visitors will also notice that we don't bow or genuflect during the "and was incarnate." Nor do we restrict our use of "Alleluia" during Lent (when the sisters at one Episcopal convent are referring to it as "the 'A' word"); in fact, during Matins in Lent, the Alleluias are more plentiful than ever.</p>
+
+  <h2><span class="num">08</span><span>Music, music, music.</span></h2>
+  <p>About seventy-five percent of the service is congregational singing. Traditionally, Orthodox use no instruments, although some churches will have organs. Usually a small choir leads the people in a cappella harmony, with the level of congregational response varying from parish to parish. The style of music varies as well, from very Oriental-sounding solo chant in an Arabic church to more Western-sounding four-part harmony in a Russian church, with lots of variation in between.</p>
+  <p>This constant singing is a little overwhelming at first; it feels like getting on the first step of an escalator and being carried along in a rush until you step off ninety minutes later. It has been fairly said that the liturgy is one continuous song.</p>
+  <p>What keeps this from being exhausting is that it's pretty much the <em>same</em> song every week. Relatively little changes from Sunday to Sunday; the same prayers and hymns appear in the same places, and before long you know it by heart. Then you fall into the presence of God in a way you never can when flipping from prayer book to bulletin to hymnal.</p>
+
+  <h2><span class="num">09</span><span>Making editors squirm.</span></h2>
+  <p>Is there a concise way to say something? Can extra adjectives be deleted? Can the briskest, most pointed prose be boiled down one more time to a more refined level? Then it's not Orthodox worship. If there's a longer way to say something, the Orthodox will find it. In Orthodox worship, more is always more, in every area including prayer. When the priest or deacon intones, "Let us complete our prayer to the Lord," expect to still be standing there fifteen minutes later.</p>
+  <p>The original liturgy lasted something over five hours; those people must have been on fire for God. The Liturgy of St. Basil edited this down to about two and a half, and later (around 400 A.D.) the Liturgy of St. John Chrysostom further reduced it to about one and a half. Most Sundays we use the St. John Chrysostom liturgy, although for some services (e.g., Sundays in Lent, Christmas Eve) we use the longer Liturgy of St. Basil.</p>
+
+  <h2><span class="num">10</span><span>Our Champion Leader.</span></h2>
+  <p>A constant feature of Orthodox worship is veneration of the Virgin Mary, the "champion leader" of all Christians. We often address her as "Theotokos," which means "Mother of God." In providing the physical means for God to become man, she made possible our salvation.</p>
+  <p>But though we honor her, as Scripture foretold ("All generations will call me blessed," Luke 1:48), this doesn't mean that we think she or any of the other saints have magical powers or are demi-gods. When we sing "Holy Theotokos, save us," we don't mean that she grants us eternal salvation, but that we seek her prayers for our protection and growth in faith. Just as we ask for each other's prayers, we ask for the prayers of Mary and other saints as well. They're not dead, after all, just departed to the other side. Icons surround us to remind us of all the saints who are joining us invisibly in worship.</p>
+
+  <h2><span class="num">11</span><span>The three doors.</span></h2>
+  <p>Every Orthodox church will have an iconostasis before its altar. "Iconostasis" means "icon-stand", and it can be as simple as a large image of Christ on the right and a corresponding image of the Virgin and Child on the left. In a more established church, the iconostasis may be a literal wall, adorned with icons. Some versions shield the altar from view, except when the central doors stand open.</p>
+  <p>The basic set-up of two large icons creates, if you use your imagination, three doors. The central one, in front of the altar itself, is called the "Holy Doors" or "Royal Doors," because there the King of Glory comes out to the congregation in the Eucharist. Only the priest and deacons, who bear the Eucharist, use the Holy Doors.</p>
+  <p>The openings on the other sides of the icons, if there is a complete iconostasis, have doors with icons of angels; they are termed the "Deacon's Doors." Altar boys and others with business behind the altar use these, although no one is to go through any of the doors without an appropriate reason. Altar service — priests, deacons, altar boys — is restricted to males. Females are invited to participate in every other area of church life. Their contribution has been honored equally with men's since the days of the martyrs; you can't look at an Orthodox altar without seeing Mary and other holy women. In most Orthodox churches, women do everything else men do: lead congregational singing, paint icons, teach classes, read the epistle, and serve on the parish council.</p>
+
+  <h2><span class="num">12</span><span>Where does an American fit in?</span></h2>
+  <p>Flipping through the Yellow Pages in a large city you might see a multiplicity of Orthodox churches: Greek, Romanian, Carpatho-Russian, Antiochian, Serbian, and on and on. Is Orthodoxy really so tribal? Do these divisions represent theological squabbles and schisms?</p>
+  <p>Not at all. All these Orthodox churches are one church. The ethnic designation refers to what is called the parish's "jurisdiction" and identifies which bishops hold authority there. There are about 6 million Orthodox in North America and 250 million in the world, making Orthodoxy the second-largest Christian communion.</p>
+  <p>The astonishing thing about this ethnic multiplicity is its theological and moral unity. Orthodox throughout the world hold unanimously to the fundamental Christian doctrines taught by the Apostles and handed down by their successors, the bishops, throughout the centuries. One could attribute this unity to historical accident. We would attribute it to the Holy Spirit.</p>
+  <p>Why then the multiplicity of ethnic churches? These national designations obviously represent geographic realities. Since North America is also a geographic unity, one day we will likewise have a unified national church — an American Orthodox Church. This was the original plan, but due to a number of complicated historical factors, it didn't happen that way. Instead, each ethnic group of Orthodox immigrating to this country developed its own church structure. This multiplication of Orthodox jurisdictions is a temporary aberration and much prayer and planning is going into breaking through those unnecessary walls.</p>
+  <p>Currently the largest American jurisdictions are the Greek Orthodox Archdiocese, The Orthodox Church in America (Russian roots), and the Antiochian Archdiocese (Arabic roots). The liturgy is substantially the same in all, though there may be variation in language used and type of music.</p>
+  <p>I wish it could be said that every local parish eagerly welcomes newcomers, but some are still so close to their immigrant experience that they are mystified as to why outsiders would be interested. Visiting several Orthodox parishes will help you learn where you're most comfortable. You will probably be looking for one that uses plenty of English in its services. Many parishes with high proportions of converts will have services entirely in English.</p>
+  <p>Orthodoxy seems startlingly different at first, but as the weeks go by it gets to be less so. It will begin to feel more and more like home, and will gradually draw you into your true home, the Kingdom of God. I hope that your first visit to an Orthodox church will be enjoyable, and that it won't be your last.</p>
+
+  <div class="footnote">An edited version of this essay is available as a brochure from Conciliar Press: (800) 967-7377.</div>
+</main>
+
+<footer>
+  <span class="amp">&amp;</span>
+  Allison &amp; Brooks Byrd · October 25, 2026 · Mesa, Arizona
+</footer>
+
+</body>
+</html>
