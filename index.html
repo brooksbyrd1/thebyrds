@@ -502,6 +502,40 @@
     margin-top: 4px;
   }
 
+  .save-the-date-times {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 56px;
+    margin: 48px 0 8px;
+    text-align: center;
+  }
+  .std-event .std-time {
+    font-family: 'Italiana', serif;
+    font-size: 32px;
+    color: var(--ink);
+    font-feature-settings: "lnum";
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+  .std-event .std-label {
+    font-family: 'Cormorant SC', serif;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    font-size: 11px;
+    color: var(--accent);
+  }
+  .std-divider {
+    width: 1px;
+    height: 56px;
+    background: var(--rule);
+  }
+  @media (max-width: 600px) {
+    .save-the-date-times { gap: 32px; }
+    .save-the-date-times .std-divider { height: 40px; }
+    .std-event .std-time { font-size: 26px; }
+  }
+
   .ics-button {
     display: inline-block;
     margin-top: 32px;
@@ -766,13 +800,11 @@
 <nav class="side-nav" id="sideNav" aria-label="Sections">
   <ol id="sideNavList">
     <li data-target="story"><a href="#story"><span class="num">01</span><span class="label">Our Story</span></a></li>
-    <li data-target="schedule"><a href="#schedule"><span class="num">02</span><span class="label">The Days</span></a></li>
+    <li data-target="schedule"><a href="#schedule"><span class="num">02</span><span class="label">Save the Date</span></a></li>
     <li data-target="orthodox"><a href="#orthodox"><span class="num">03</span><span class="label">Orthodox Wedding</span></a></li>
     <li data-target="travel"><a href="#travel"><span class="num">04</span><span class="label">Travel &amp; Stay</span></a></li>
-    <li data-target="faq"><a href="#faq"><span class="num">05</span><span class="label">FAQ</span></a></li>
-    <li data-target="rsvp"><a href="#rsvp"><span class="num">06</span><span class="label">RSVP</span></a></li>
-    <li data-target="gifts"><a href="#gifts"><span class="num">07</span><span class="label">Gifts</span></a></li>
-    <li data-target="contact"><a href="#contact"><span class="num">08</span><span class="label">Contact</span></a></li>
+    <li data-target="rsvp"><a href="#rsvp"><span class="num">05</span><span class="label">RSVP</span></a></li>
+    <li data-target="gifts"><a href="#gifts"><span class="num">06</span><span class="label">Gifts</span></a></li>
   </ol>
 </nav>
 
@@ -784,13 +816,11 @@
 <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Menu">
   <ol>
     <li><a href="#story"><span class="num">01</span> Our Story</a></li>
-    <li><a href="#schedule"><span class="num">02</span> The Days</a></li>
+    <li><a href="#schedule"><span class="num">02</span> Save the Date</a></li>
     <li><a href="#orthodox"><span class="num">03</span> Orthodox Wedding</a></li>
     <li><a href="#travel"><span class="num">04</span> Travel &amp; Stay</a></li>
-    <li><a href="#faq"><span class="num">05</span> FAQ</a></li>
-    <li><a href="#rsvp"><span class="num">06</span> RSVP</a></li>
-    <li><a href="#gifts"><span class="num">07</span> Gifts</a></li>
-    <li><a href="#contact"><span class="num">08</span> Contact</a></li>
+    <li><a href="#rsvp"><span class="num">05</span> RSVP</a></li>
+    <li><a href="#gifts"><span class="num">06</span> Gifts</a></li>
   </ol>
 </div>
 
@@ -812,9 +842,9 @@
   <div class="hero-grain" aria-hidden="true"></div>
 
   <div class="hero-content">
-    <h1>Brooks</h1>
-    <span class="ampersand">&amp;</span>
     <h1>Allison</h1>
+    <span class="ampersand">&amp;</span>
+    <h1>Brooks Byrd</h1>
   </div>
 </section>
 
@@ -833,61 +863,19 @@
 <!-- ─── 02 · THE DAYS ─────────────────────────────────────────── -->
 <section id="schedule">
   <div class="container">
-    <div class="section-label"><span class="num">02</span>The Days</div>
-    <h2>Lorem ipsum dolor sit amet.</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <div class="section-label"><span class="num">02</span>Save the Date</div>
+    <h2>Sunday, October 25, 2026</h2>
+    <p>Please save the date — we'd love to have you celebrate with us in Mesa, Arizona. More details to follow.</p>
 
-    <div class="schedule-day">
-      <div class="day-header">
-        <div class="day-title">Lorem Ipsum</div>
-        <div class="day-date">Saturday · October 24, 2026</div>
+    <div class="save-the-date-times">
+      <div class="std-event">
+        <div class="std-time">3:00 pm</div>
+        <div class="std-label">Ceremony</div>
       </div>
-      <div class="schedule-event">
-        <div class="time">5:00 pm</div>
-        <div>
-          <div class="name">Lorem ipsum dolor sit</div>
-          <div class="where">Consectetur adipiscing elit, sed do eiusmod</div>
-          <div class="attire">Attire · Lorem ipsum</div>
-        </div>
-      </div>
-      <div class="schedule-event">
-        <div class="time">7:30 pm</div>
-        <div>
-          <div class="name">Ut enim ad minim veniam</div>
-          <div class="where">Quis nostrud exercitation ullamco laboris</div>
-          <div class="attire">Attire · Lorem ipsum</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="schedule-day">
-      <div class="day-header">
-        <div class="day-title">Dolor Sit Amet</div>
-        <div class="day-date">Sunday · October 25, 2026</div>
-      </div>
-      <div class="schedule-event">
-        <div class="time">3:00 pm</div>
-        <div>
-          <div class="name">Duis aute irure dolor</div>
-          <div class="where">St. Ignatius Orthodox Christian Church · Mesa, AZ</div>
-          <div class="attire">Attire · Lorem ipsum</div>
-        </div>
-      </div>
-      <div class="schedule-event">
-        <div class="time">5:30 pm</div>
-        <div>
-          <div class="name">Reprehenderit in voluptate</div>
-          <div class="where">Velit esse cillum dolore eu fugiat</div>
-          <div class="attire">Attire · Lorem ipsum</div>
-        </div>
-      </div>
-      <div class="schedule-event">
-        <div class="time">10:00 pm</div>
-        <div>
-          <div class="name">Excepteur sint occaecat</div>
-          <div class="where">Cupidatat non proident, sunt in culpa</div>
-          <div class="attire">Attire · Lorem ipsum</div>
-        </div>
+      <div class="std-divider"></div>
+      <div class="std-event">
+        <div class="std-time">6:00 pm</div>
+        <div class="std-label">Reception</div>
       </div>
     </div>
 
@@ -973,54 +961,10 @@
   </div>
 </section>
 
-<!-- ─── 05 · FAQ ──────────────────────────────────────────────── -->
-<section id="faq">
-  <div class="container">
-    <div class="section-label"><span class="num">05</span>FAQ</div>
-    <h2>Lorem ipsum dolor sit amet.</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
-
-    <div class="faq" style="margin-top: 36px;">
-      <details>
-        <summary>Lorem ipsum dolor sit amet, consectetur?</summary>
-        <div class="answer">Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-      </details>
-      <details>
-        <summary>Ut enim ad minim veniam, quis nostrud?</summary>
-        <div class="answer">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</div>
-      </details>
-      <details>
-        <summary>Excepteur sint occaecat cupidatat non proident?</summary>
-        <div class="answer">Sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</div>
-      </details>
-      <details>
-        <summary>Accusantium doloremque laudantium, totam rem aperiam?</summary>
-        <div class="answer">Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</div>
-      </details>
-      <details>
-        <summary>Nemo enim ipsam voluptatem quia voluptas sit?</summary>
-        <div class="answer">Aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</div>
-      </details>
-      <details>
-        <summary>Neque porro quisquam est, qui dolorem ipsum?</summary>
-        <div class="answer">Quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt.</div>
-      </details>
-      <details>
-        <summary>Ut labore et dolore magnam aliquam quaerat?</summary>
-        <div class="answer">Voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.</div>
-      </details>
-      <details>
-        <summary>Nisi ut aliquid ex ea commodi consequatur?</summary>
-        <div class="answer">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.</div>
-      </details>
-    </div>
-  </div>
-</section>
-
-<!-- ─── 06 · RSVP ─────────────────────────────────────────────── -->
+<!-- ─── 05 · RSVP ─────────────────────────────────────────────── -->
 <section id="rsvp">
   <div class="container">
-    <div class="section-label"><span class="num">06</span>RSVP</div>
+    <div class="section-label"><span class="num">05</span>RSVP</div>
     <h2>Lorem ipsum dolor sit amet.</h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
 
@@ -1034,10 +978,10 @@
   </div>
 </section>
 
-<!-- ─── 07 · GIFTS ────────────────────────────────────────────── -->
+<!-- ─── 06 · GIFTS ────────────────────────────────────────────── -->
 <section id="gifts">
   <div class="container">
-    <div class="section-label"><span class="num">07</span>Gifts</div>
+    <div class="section-label"><span class="num">06</span>Gifts</div>
     <h2>Lorem ipsum dolor sit amet.</h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 
@@ -1058,16 +1002,6 @@
         <a class="link" href="#">Donate</a>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ─── 08 · CONTACT ──────────────────────────────────────────── -->
-<section id="contact">
-  <div class="container contact">
-    <div class="section-label" style="justify-content:center;"><span class="num">08</span>Contact</div>
-    <h2>Lorem ipsum dolor.</h2>
-    <p style="margin: 0 auto 24px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.</p>
-    <a class="email" href="mailto:hello@brooksandallison.com">hello@brooksandallison.com</a>
   </div>
 </section>
 
