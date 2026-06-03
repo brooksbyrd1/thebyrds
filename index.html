@@ -734,6 +734,29 @@
     padding-bottom: 2px;
   }
 
+  /* ─── Zola registry button ───────────────────────────────── */
+  a.zola-registry-btn {
+    display: inline-block;
+    margin-top: 24px;
+    padding: 12px 32px;
+    background: transparent;
+    color: var(--ink) !important;
+    border: 1px solid var(--accent) !important;
+    border-bottom: 1px solid var(--accent) !important;
+    font-family: 'Cormorant SC', serif !important;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    font-size: 11px;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+    text-decoration: none;
+  }
+  a.zola-registry-btn:hover {
+    background: var(--accent);
+    color: var(--paper) !important;
+    border-bottom-color: var(--accent) !important;
+  }
+
   /* ─── Contact ─────────────────────────────────────────────── */
   .contact {
     text-align: center;
@@ -979,8 +1002,10 @@ For those who are curious to learn more, we have included a few resources that m
 <section id="gifts">
   <div class="container">
     <div class="section-label"><span class="num">05</span>Gifts</div>
-    <h2>Coming soon&hellip;</h2>
-    <p>Your presence is the only gift we need. Registry details will be posted here closer to the wedding.</p>
+    <h2>Registry</h2>
+    <p>Your presence is the greatest gift. If you would like to give, we are registered on Zola.</p>
+    <script src="https://www.zola.com/js/registry-button-widget.js" defer></script>
+    <a class="zola-registry-btn" href="https://www.zola.com/registry/allison-claireandbrooks" data-registry-key="allison-claireandbrooks">View Our Registry</a>
   </div>
 </section>
 
