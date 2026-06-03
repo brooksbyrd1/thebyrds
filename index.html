@@ -326,7 +326,8 @@
   }
 
   /* ─── Story ───────────────────────────────────────────────── */
-  .story-prose p { max-width: none; }
+  .story-prose p { max-width: 68ch; line-height: 1.85; }
+  .story-prose p + p { margin-top: 20px; }
   .story-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -817,10 +818,11 @@
 <!-- ─── Floating left nav (desktop) ───────────────────────────── -->
 <nav class="side-nav" id="sideNav" aria-label="Sections">
   <ol id="sideNavList">
-    <li data-target="schedule"><a href="#schedule"><span class="num">01</span><span class="label">Save the Date</span></a></li>
-    <li data-target="orthodox"><a href="#orthodox"><span class="num">02</span><span class="label">Orthodox Wedding</span></a></li>
-    <li data-target="travel"><a href="#travel"><span class="num">03</span><span class="label">Travel &amp; Stay</span></a></li>
-    <li data-target="gifts"><a href="#gifts"><span class="num">04</span><span class="label">Gifts</span></a></li>
+    <li data-target="story"><a href="#story"><span class="num">01</span><span class="label">Our Story</span></a></li>
+    <li data-target="schedule"><a href="#schedule"><span class="num">02</span><span class="label">Save the Date</span></a></li>
+    <li data-target="orthodox"><a href="#orthodox"><span class="num">03</span><span class="label">Orthodox Wedding</span></a></li>
+    <li data-target="travel"><a href="#travel"><span class="num">04</span><span class="label">Travel &amp; Stay</span></a></li>
+    <li data-target="gifts"><a href="#gifts"><span class="num">05</span><span class="label">Gifts</span></a></li>
   </ol>
 </nav>
 
@@ -831,10 +833,11 @@
 
 <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Menu">
   <ol>
-    <li><a href="#schedule"><span class="num">01</span> Save the Date</a></li>
-    <li><a href="#orthodox"><span class="num">02</span> Orthodox Wedding</a></li>
-    <li><a href="#travel"><span class="num">03</span> Travel &amp; Stay</a></li>
-    <li><a href="#gifts"><span class="num">04</span> Gifts</a></li>
+    <li><a href="#story"><span class="num">01</span> Our Story</a></li>
+    <li><a href="#schedule"><span class="num">02</span> Save the Date</a></li>
+    <li><a href="#orthodox"><span class="num">03</span> Orthodox Wedding</a></li>
+    <li><a href="#travel"><span class="num">04</span> Travel &amp; Stay</a></li>
+    <li><a href="#gifts"><span class="num">05</span> Gifts</a></li>
   </ol>
 </div>
 
@@ -854,10 +857,24 @@
   </div>
 </section>
 
-<!-- ─── 01 · SAVE THE DATE ────────────────────────────────────── -->
+<!-- ─── 01 · OUR STORY ─────────────────────────────────────────── -->
+<section id="story">
+  <div class="container">
+    <div class="section-label"><span class="num">01</span>Our Story</div>
+    <h2>How It All Began</h2>
+    <div class="story-prose">
+      <p>Once upon a time, Brooks traveled long and far down to the desolate desert of Arizona to test himself against the infamous riddles of Allison Lowe. Whoever was able to answer these riddles won her hand in marriage and her dowry of 100 stuffed chickens. Eager to try his luck, Brooks waded through the hoi polloi found on a commercial airline flight, lulling babies to sleep with his song and saving downed passengers.</p>
+      <p>Once the plane touched down, he eagerly rushed down into the dungeons of car rentals, only to discover that his car had been stolen by a woman and child pretending to be innocent. Luckily, he was able to woo the big corporate monster that was the parking lot attendant to get a new car. As they parted, the attendant issued a grave warning to stay away from the crazy Arizona girls and to avoid car jackers. He rushed to pick flowers from the banks of the overpass and made his way to Allison's floral fortress.</p>
+      <p>She waited for him in a beautiful, flowery dress, surrounded by citrus trees. She was guarded by two fierce little, lazy dogs and a tortoise. Brooks barely made it out alive. He took her hand and led her to the chariot and then down to the Mediterranean market, where they were met with dead rabbits, unsolicited belly dancers, and a bust of Hermes. They were so excited that they barely ate and talked at the same time, neither person hearing a word of the other. It was love.</p>
+      <p>The rest was as predictable as the beginning, representing the average American love story. A few months went by, the wagon was packed and hauled by the finest team in Arizona to the great state of Montana where they bought a historic 1900s house and planned for many babies and large land purchases.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── 02 · SAVE THE DATE ────────────────────────────────────── -->
 <section id="schedule">
   <div class="container">
-    <div class="section-label"><span class="num">01</span>Save the Date</div>
+    <div class="section-label"><span class="num">02</span>Save the Date</div>
     <h2>Sunday, October 25, 2026</h2>
     <p>We would love to have you join us as we begin our life together. All the details are below.</p>
 
@@ -897,10 +914,10 @@
   </div>
 </section>
 
-<!-- ─── 02 · ORTHODOX WEDDING ─────────────────────────────────── -->
+<!-- ─── 03 · ORTHODOX WEDDING ─────────────────────────────────── -->
 <section id="orthodox">
   <div class="container">
-    <div class="section-label"><span class="num">02</span>Orthodox Wedding</div>
+    <div class="section-label"><span class="num">03</span>Orthodox Wedding</div>
     <h2>What is an Orthodox Christian Wedding?</h2>
     <p class="orthodox-intro">
 We recognize that the Orthodox Church may be unfamiliar to many of our guests. Orthodox Christianity is the ancient Christian faith, faithfully preserved and handed down through the centuries since the time of Christ and His Apostles.
@@ -928,10 +945,10 @@ For those who are curious to learn more, we have included a few resources that m
   </div>
 </section>
 
-<!-- ─── 03 · TRAVEL & STAY ────────────────────────────────────── -->
+<!-- ─── 04 · TRAVEL & STAY ────────────────────────────────────── -->
 <section id="travel">
   <div class="container">
-    <div class="section-label"><span class="num">03</span>Travel &amp; Stay</div>
+    <div class="section-label"><span class="num">04</span>Travel &amp; Stay</div>
     <h2>Where to Stay</h2>
     <p>For our out-of-town guests, we have reserved a block of rooms at the Arizona Grand Resort &amp; Spa.</p>
 
@@ -954,10 +971,10 @@ For those who are curious to learn more, we have included a few resources that m
   </div>
 </section>
 
-<!-- ─── 04 · GIFTS ────────────────────────────────────────────── -->
+<!-- ─── 05 · GIFTS ────────────────────────────────────────────── -->
 <section id="gifts">
   <div class="container">
-    <div class="section-label"><span class="num">04</span>Gifts</div>
+    <div class="section-label"><span class="num">05</span>Gifts</div>
     <h2>Coming soon&hellip;</h2>
     <p>Your presence is the only gift we need. Registry details will be posted here closer to the wedding.</p>
   </div>
