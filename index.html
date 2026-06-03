@@ -51,8 +51,7 @@
   main, header, footer { position: relative; z-index: 1; }
 
   /* ─── Typography ──────────────────────────────────────────── */
-  h1, h2, .display { font-family: 'Cormorant Garamond', serif; font-weight: 400; letter-spacing: 0.01em; }
-  .smallcaps {
+  h1, h2, .display { font-family: Georgia, serif; font-weight: 400; letter-spacing: 0.01em; }  .smallcaps {
     font-family: 'Cormorant SC', serif;
     letter-spacing: 0.28em;
     text-transform: uppercase;
@@ -68,7 +67,7 @@
     color: var(--accent);
     margin: 0 0 16px;
   }
-  p { margin: 0 0 16px; max-width: 62ch; }
+  p { margin: 0 0 16px; }
   em { font-style: italic; color: var(--soft-ink); }
   a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(140, 46, 42, 0.3); }
   a:hover { border-bottom-color: var(--accent); }
@@ -326,7 +325,7 @@
   }
 
   /* ─── Story ───────────────────────────────────────────────── */
-  .story-prose p { max-width: 68ch; line-height: 1.85; }
+  .story-prose p { line-height: 1.85; }
   .story-prose p + p { margin-top: 20px; }
   .story-grid {
     display: grid;
@@ -512,7 +511,6 @@
     color: var(--soft-ink);
     line-height: 1.6;
     margin-bottom: 40px;
-    max-width: 60ch;
   }
   .orthodox-links {
     display: grid;
@@ -692,7 +690,6 @@
     font-style: italic;
     color: var(--quiet-ink);
     font-size: 15px;
-    max-width: 40ch;
   }
 
   /* ─── Gifts ───────────────────────────────────────────────── */
@@ -834,6 +831,14 @@
     html { scroll-behavior: auto; }
     * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
   }
+
+  .section-sep {
+    display: block;
+    width: 36rem;
+    height: auto;
+    margin: 0 auto;
+    opacity: 0.7;
+  }
 </style>
 </head>
 <body>
@@ -880,6 +885,8 @@
   </div>
 </section>
 
+<img class="section-sep" src="line1-1.svg" alt="" aria-hidden="true" />
+
 <!-- ─── 01 · OUR STORY ─────────────────────────────────────────── -->
 <section id="story">
   <div class="container">
@@ -893,6 +900,8 @@
     </div>
   </div>
 </section>
+
+<img class="section-sep" src="line1-1.svg" alt="" aria-hidden="true" />
 
 <!-- ─── 02 · SAVE THE DATE ────────────────────────────────────── -->
 <section id="schedule">
@@ -937,6 +946,8 @@
   </div>
 </section>
 
+<img class="section-sep" src="line1-1.svg" alt="" aria-hidden="true" />
+
 <!-- ─── 03 · ORTHODOX WEDDING ─────────────────────────────────── -->
 <section id="orthodox">
   <div class="container">
@@ -972,6 +983,8 @@ For those who are curious to learn more, we have included a few resources that m
   </div>
 </section>
 
+<img class="section-sep" src="line1-1.svg" alt="" aria-hidden="true" />
+
 <!-- ─── 04 · TRAVEL & STAY ────────────────────────────────────── -->
 <section id="travel">
   <div class="container">
@@ -997,6 +1010,8 @@ For those who are curious to learn more, we have included a few resources that m
     <div class="map-caption">Arizona Grand Resort &amp; Spa · Phoenix, Arizona</div>
   </div>
 </section>
+
+<img class="section-sep" src="line1-1.svg" alt="" aria-hidden="true" />
 
 <!-- ─── 05 · GIFTS ────────────────────────────────────────────── -->
 <section id="gifts">
