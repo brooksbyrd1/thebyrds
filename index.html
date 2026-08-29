@@ -666,8 +666,32 @@
   /* ─── RSVP ────────────────────────────────────────────────── */
   .rsvp-cta {
     text-align: center;
+    padding: 10px;
+    background: var(--parchment);
+    border: 1px solid var(--rule);
+    box-shadow: 0 12px 32px rgba(43, 34, 28, 0.06);
   }
-  .rsvp-cta p { max-width: 440px; margin-left: auto; margin-right: auto; }
+  .rsvp-cta-frame {
+    padding: 56px 40px 48px;
+    border: 1px solid rgba(132, 56, 58, 0.35);
+  }
+  .rsvp-amp {
+    display: block;
+    font-family: 'Great Vibes', cursive;
+    font-size: 42px;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 18px;
+  }
+  .rsvp-cta .section-label { margin-bottom: 20px; }
+  .rsvp-cta h2 { margin-bottom: 14px; }
+  .rsvp-cta p { max-width: 400px; margin-left: auto; margin-right: auto; }
+  .rsvp-cta .zola-registry-btn { margin-top: 28px; }
+
+  @media (max-width: 600px) {
+    .rsvp-cta { padding: 6px; }
+    .rsvp-cta-frame { padding: 40px 22px 36px; }
+  }
 
   /* ─── Gifts ───────────────────────────────────────────────── */
   .gifts-grid {
@@ -1009,10 +1033,13 @@ We recognize that the Orthodox Church may be unfamiliar to many of our guests. F
 <section id="rsvp">
   <div class="container">
     <div class="rsvp-cta">
-      <div class="section-label"><span class="num">05</span>RSVP</div>
-      <h2>Join Us</h2>
-      <p>Please let us know who's coming, along with any dietary restrictions.</p>
-      <a class="zola-registry-btn" href="/rsvp">RSVP Now</a>
+      <div class="rsvp-cta-frame">
+        <span class="rsvp-amp">&amp;</span>
+        <div class="section-label"><span class="num">05</span>RSVP</div>
+        <h2>Join Us</h2>
+        <p>Please let us know who's coming, along with any dietary restrictions.</p>
+        <a class="zola-registry-btn" href="/rsvp">RSVP Now</a>
+      </div>
     </div>
   </div>
 </section>
