@@ -182,13 +182,54 @@
     cursor: pointer;
     transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
   }
-  .party-picker .pill.not-attending { min-width: auto; padding: 0 18px; font-size: 14px; font-style: italic; }
   .party-picker input:checked + .pill {
     background: var(--accent);
     border-color: var(--accent);
     color: var(--paper);
   }
   .party-picker input:focus-visible + .pill { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .party-picker.is-hidden { display: none; }
+
+  /* Attending Yes/No toggle */
+  .attending-picker {
+    display: flex;
+    gap: 10px;
+  }
+  .attending-picker input { position: absolute; opacity: 0; width: 0; height: 0; }
+  .attending-picker .pill {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 46px;
+    border: 1px solid var(--rule);
+    color: var(--soft-ink);
+    font-family: 'Cormorant SC', serif;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  }
+  .attending-picker input:checked + .pill {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--paper);
+  }
+  .attending-picker input:focus-visible + .pill { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .party-field {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    margin-bottom: 0;
+    transition: max-height 0.25s ease, opacity 0.2s ease, margin-bottom 0.25s ease;
+  }
+  .party-field.is-visible {
+    max-height: 400px;
+    opacity: 1;
+    margin-bottom: 30px;
+  }
 
   /* Guest cards */
   #guestFields { margin-top: -6px; }
@@ -287,12 +328,19 @@
       </div>
 
       <div class="field">
+        <label>Will You Be Attending?</label>
+        <div class="attending-picker" id="attendingPicker" role="radiogroup" aria-label="Attending">
+          <input type="radio" name="attending" id="attendingYes" value="yes" />
+          <label class="pill" for="attendingYes">Joyfully Accept</label>
+          <input type="radio" name="attending" id="attendingNo" value="no" />
+          <label class="pill" for="attendingNo">Regretfully Decline</label>
+        </div>
+      </div>
+
+      <div class="field party-field" id="partyField">
         <label>Number Attending</label>
         <p class="field-hint">Including yourself</p>
-        <div class="party-picker" id="partyPicker" role="radiogroup" aria-label="Number attending">
-          <input type="radio" name="partySize" id="party0" value="0" />
-          <label class="pill not-attending" for="party0">Can't make it</label>
-        </div>
+        <div class="party-picker" id="partyPicker" role="radiogroup" aria-label="Number attending"></div>
       </div>
 
       <div id="guestFields"></div>
@@ -319,13 +367,15 @@
   var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxgBzba9NTTZdW2t03Q-2qwd_9hchWHYk8HJ-ZCYl0-wN-qAAs3bakd9-Zb26H7IYwl/exec';
 
   var MAX_PARTY = 8;
+  var attendingPicker = document.getElementById('attendingPicker');
+  var partyField = document.getElementById('partyField');
   var partyPicker = document.getElementById('partyPicker');
   var guestFieldsEl = document.getElementById('guestFields');
   var form = document.getElementById('rsvpForm');
   var submitBtn = document.getElementById('submitBtn');
   var statusEl = document.getElementById('status');
 
-  // Build pills 1..MAX_PARTY after the "Can't make it" option.
+  // Build pills 1..MAX_PARTY.
   for (var n = 1; n <= MAX_PARTY; n++) {
     var input = document.createElement('input');
     input.type = 'radio';
@@ -369,6 +419,18 @@
     }
   });
 
+  attendingPicker.addEventListener('change', function(e) {
+    if (!e.target || e.target.name !== 'attending') return;
+    if (e.target.value === 'yes') {
+      partyField.classList.add('is-visible');
+    } else {
+      partyField.classList.remove('is-visible');
+      var checked = partyPicker.querySelector('input:checked');
+      if (checked) checked.checked = false;
+      renderGuestFields(0);
+    }
+  });
+
   function showStatus(message, type) {
     statusEl.textContent = message;
     statusEl.className = 'status visible ' + type;
@@ -377,12 +439,21 @@
   form.addEventListener('submit', function(e) {
     e.preventDefault();
 
-    var selected = form.querySelector('input[name="partySize"]:checked');
-    if (!selected) {
-      showStatus('Please select the number attending.', 'error');
+    var attending = form.querySelector('input[name="attending"]:checked');
+    if (!attending) {
+      showStatus('Please let us know if you can make it.', 'error');
       return;
     }
-    var partySize = parseInt(selected.value, 10) || 0;
+
+    var partySize = 0;
+    if (attending.value === 'yes') {
+      var selected = form.querySelector('input[name="partySize"]:checked');
+      if (!selected) {
+        showStatus('Please select the number attending.', 'error');
+        return;
+      }
+      partySize = parseInt(selected.value, 10) || 0;
+    }
 
     var guests = [];
     for (var i = 1; i <= partySize; i++) {
@@ -413,6 +484,7 @@
         showStatus('Thank you — your RSVP has been received!', 'success');
         form.reset();
         guestFieldsEl.innerHTML = '';
+        partyField.classList.remove('is-visible');
         submitBtn.textContent = 'Send RSVP';
         submitBtn.disabled = false;
       })
