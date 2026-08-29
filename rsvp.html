@@ -304,6 +304,44 @@
     margin-bottom: 12px;
   }
 
+  /* ─── Success panel ──────────────────────────────────────── */
+  .success-panel {
+    display: none;
+    text-align: center;
+    padding: 20px 0 8px;
+  }
+  .success-panel.is-visible { display: block; }
+  .success-panel h2 {
+    font-family: Georgia, serif;
+    font-weight: 400;
+    font-size: clamp(32px, 6vw, 44px);
+    margin: 0 0 14px;
+    color: var(--ink);
+  }
+  .success-panel p { max-width: 420px; margin: 0 auto 14px; }
+  .success-panel .registry-note {
+    font-style: italic;
+    color: var(--quiet-ink);
+    font-size: 16px;
+    margin-top: 28px;
+  }
+  a.zola-registry-btn {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 14px 32px;
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid var(--accent);
+    font-family: 'Cormorant SC', serif;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+    text-decoration: none;
+  }
+  a.zola-registry-btn:hover { background: var(--accent); color: var(--paper); }
+
   @media (max-width: 600px) {
     .container { padding: 0 22px; }
     .guest-row { grid-template-columns: 1fr; gap: 20px; }
@@ -361,6 +399,14 @@
       <button type="submit" id="submitBtn">Send RSVP</button>
       <p class="status" id="status"></p>
     </form>
+
+    <div class="success-panel" id="successPanel">
+      <span class="amp-mark">&amp;</span>
+      <h2>Thank You</h2>
+      <p>Your RSVP has been received. We can't wait to celebrate with you!</p>
+      <p class="registry-note">Your presence is the greatest gift. If you would like to give, we're registered on Zola.</p>
+      <a class="zola-registry-btn" href="https://www.zola.com/registry/allison-claireandbrooks" target="_blank" rel="noopener">View Our Registry</a>
+    </div>
   </div>
 </main>
 
@@ -382,6 +428,7 @@
   var form = document.getElementById('rsvpForm');
   var submitBtn = document.getElementById('submitBtn');
   var statusEl = document.getElementById('status');
+  var successPanel = document.getElementById('successPanel');
 
   // Build pills 1..MAX_PARTY.
   for (var n = 1; n <= MAX_PARTY; n++) {
@@ -489,12 +536,14 @@
       body: JSON.stringify(payload)
     })
       .then(function() {
-        showStatus('Thank you — your RSVP has been received!', 'success');
         form.reset();
         guestFieldsEl.innerHTML = '';
         partyField.classList.remove('is-visible');
         submitBtn.textContent = 'Send RSVP';
         submitBtn.disabled = false;
+        form.style.display = 'none';
+        successPanel.classList.add('is-visible');
+        successPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
       })
       .catch(function() {
         showStatus('Something went wrong. Please try again or reach out directly.', 'error');
