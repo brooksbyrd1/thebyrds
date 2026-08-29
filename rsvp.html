@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>RSVP · Allison &amp; Brooks · October 25, 2026</title>
+<meta name="description" content="RSVP for the wedding of Allison and Brooks — October 25, 2026 in Mesa, Arizona." />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Cormorant+SC:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper:       #FAEEE1;
+    --parchment:   #F3E8D2;
+    --bone:        #E6D7BB;
+    --ink:         #2B221C;
+    --soft-ink:    #4A3E34;
+    --quiet-ink:   #8A7E73;
+    --accent:      #84383a;
+    --rule:        rgba(43, 34, 28, 0.16);
+    --rule-soft:   rgba(43, 34, 28, 0.08);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    color: var(--ink);
+    background: var(--paper);
+    font-size: 18px;
+    line-height: 1.7;
+    letter-spacing: 0.005em;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body::before {
+    content: "";
+    position: fixed; inset: 0;
+    pointer-events: none; z-index: 0;
+    opacity: 0.3;
+    background-image:
+      radial-gradient(rgba(60, 40, 25, 0.04) 1px, transparent 1px),
+      radial-gradient(rgba(60, 40, 25, 0.03) 1px, transparent 1px);
+    background-size: 3px 3px, 7px 7px;
+    background-position: 0 0, 1px 2px;
+  }
+
+  main, header, footer { position: relative; z-index: 1; }
+
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  a { color: var(--accent); }
+
+  /* ─── Header ──────────────────────────────────────────────── */
+  header.page-head {
+    text-align: center;
+    padding: 88px 32px 8px;
+  }
+  header.page-head a.home {
+    display: inline-block;
+    font-family: 'Cormorant SC', serif;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    font-size: 11px;
+    color: var(--quiet-ink);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(140, 46, 42, 0.3);
+    padding-bottom: 3px;
+    margin-bottom: 40px;
+    transition: color 0.2s ease;
+  }
+  header.page-head a.home:hover { color: var(--accent); }
+
+  .amp-mark {
+    font-family: 'Great Vibes', cursive;
+    font-size: 44px;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  h1 {
+    font-family: Georgia, serif;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    font-size: clamp(48px, 9vw, 88px);
+    line-height: 0.95;
+    margin: 0 0 18px;
+    color: var(--ink);
+  }
+  .subhead {
+    font-style: italic;
+    color: var(--quiet-ink);
+    font-size: 19px;
+    margin: 0 0 8px;
+  }
+  .subhead .date {
+    display: block;
+    margin-top: 4px;
+    font-style: normal;
+    font-family: 'Cormorant SC', serif;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: var(--quiet-ink);
+  }
+
+  .section-sep {
+    display: block;
+    width: 26rem;
+    max-width: 80%;
+    height: auto;
+    margin: 40px auto 0;
+    opacity: 0.7;
+  }
+
+  /* ─── Form ────────────────────────────────────────────────── */
+  main { padding: 24px 0 100px; }
+
+  form { margin-top: 8px; }
+
+  .field { margin-bottom: 30px; }
+
+  label {
+    display: block;
+    font-family: 'Cormorant SC', serif;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: var(--soft-ink);
+    margin-bottom: 10px;
+  }
+  .field-hint {
+    font-style: italic;
+    color: var(--quiet-ink);
+    font-size: 14px;
+    margin: -4px 0 12px;
+  }
+
+  input[type="text"], textarea {
+    width: 100%;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 19px;
+    color: var(--ink);
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--rule);
+    padding: 8px 2px;
+    transition: border-color 0.2s ease;
+  }
+  input[type="text"]::placeholder, textarea::placeholder { color: var(--quiet-ink); opacity: 0.7; }
+  input[type="text"]:focus, textarea:focus {
+    outline: none;
+    border-bottom-color: var(--accent);
+  }
+  textarea { resize: vertical; min-height: 90px; line-height: 1.6; }
+
+  /* Party-size picker: styled radio pills */
+  .party-picker {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .party-picker input { position: absolute; opacity: 0; width: 0; height: 0; }
+  .party-picker .pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 46px;
+    height: 46px;
+    padding: 0 6px;
+    border: 1px solid var(--rule);
+    color: var(--soft-ink);
+    font-size: 17px;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  }
+  .party-picker .pill.not-attending { min-width: auto; padding: 0 18px; font-size: 14px; font-style: italic; }
+  .party-picker input:checked + .pill {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--paper);
+  }
+  .party-picker input:focus-visible + .pill { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  /* Guest cards */
+  #guestFields { margin-top: -6px; }
+  .guest-block {
+    padding: 26px 0;
+    border-top: 1px dashed var(--rule);
+  }
+  .guest-block:last-child { padding-bottom: 4px; }
+  .guest-block .guest-label {
+    font-family: 'Cormorant SC', serif;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    font-size: 11px;
+    color: var(--accent);
+    margin-bottom: 18px;
+  }
+  .guest-block .field { margin-bottom: 20px; }
+  .guest-block .field:last-child { margin-bottom: 0; }
+  .guest-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  button[type="submit"] {
+    display: block;
+    width: 100%;
+    margin-top: 44px;
+    padding: 16px 32px;
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid var(--accent);
+    font-family: 'Cormorant SC', serif;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+  button[type="submit"]:hover:not(:disabled) { background: var(--accent); color: var(--paper); }
+  button[type="submit"]:disabled { opacity: 0.5; cursor: default; }
+
+  .status {
+    margin-top: 22px;
+    text-align: center;
+    font-style: italic;
+    font-size: 16px;
+    display: none;
+  }
+  .status.visible { display: block; }
+  .status.success { color: var(--accent); }
+  .status.error { color: #a02b2b; }
+
+  footer {
+    text-align: center;
+    padding: 60px 24px;
+    border-top: 1px solid var(--rule);
+    color: var(--quiet-ink);
+    font-style: italic;
+    font-size: 14px;
+  }
+  footer .amp {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 36px;
+    color: var(--accent);
+    display: block;
+    line-height: 0.8;
+    margin-bottom: 12px;
+  }
+
+  @media (max-width: 600px) {
+    .container { padding: 0 22px; }
+    .guest-row { grid-template-columns: 1fr; gap: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="page-head">
+  <div class="container">
+    <a class="home" href="/">&larr; Back Home</a>
+    <span class="amp-mark">&amp;</span>
+    <h1>RSVP</h1>
+    <p class="subhead">We can't wait to celebrate with you<span class="date">October 25, 2026 &middot; Mesa, Arizona</span></p>
+  </div>
+  <img class="section-sep" src="line1-1.svg" alt="" aria-hidden="true" />
+</header>
+
+<main>
+  <div class="container">
+    <form id="rsvpForm">
+      <div class="field">
+        <label for="leadName">Your Name</label>
+        <input type="text" id="leadName" name="leadName" placeholder="Full name" required autocomplete="name" />
+      </div>
+
+      <div class="field">
+        <label>Number Attending</label>
+        <p class="field-hint">Including yourself</p>
+        <div class="party-picker" id="partyPicker" role="radiogroup" aria-label="Number attending">
+          <input type="radio" name="partySize" id="party0" value="0" />
+          <label class="pill not-attending" for="party0">Can't make it</label>
+        </div>
+      </div>
+
+      <div id="guestFields"></div>
+
+      <div class="field">
+        <label for="notes">Notes</label>
+        <textarea id="notes" name="notes" placeholder="Song requests, allergies, anything else we should know…"></textarea>
+      </div>
+
+      <button type="submit" id="submitBtn">Send RSVP</button>
+      <p class="status" id="status"></p>
+    </form>
+  </div>
+</main>
+
+<footer>
+  <span class="amp">&amp;</span>
+  Allison &amp; Brooks · October 25, 2026 · Mesa, Arizona
+</footer>
+
+<script>
+(function() {
+  // Replace with the deployed Google Apps Script Web App URL.
+  var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxgBzba9NTTZdW2t03Q-2qwd_9hchWHYk8HJ-ZCYl0-wN-qAAs3bakd9-Zb26H7IYwl/exec';
+
+  var MAX_PARTY = 8;
+  var partyPicker = document.getElementById('partyPicker');
+  var guestFieldsEl = document.getElementById('guestFields');
+  var form = document.getElementById('rsvpForm');
+  var submitBtn = document.getElementById('submitBtn');
+  var statusEl = document.getElementById('status');
+
+  // Build pills 1..MAX_PARTY after the "Can't make it" option.
+  for (var n = 1; n <= MAX_PARTY; n++) {
+    var input = document.createElement('input');
+    input.type = 'radio';
+    input.name = 'partySize';
+    input.id = 'party' + n;
+    input.value = String(n);
+
+    var pill = document.createElement('label');
+    pill.className = 'pill';
+    pill.setAttribute('for', 'party' + n);
+    pill.textContent = n;
+
+    partyPicker.appendChild(input);
+    partyPicker.appendChild(pill);
+  }
+
+  function renderGuestFields(count) {
+    guestFieldsEl.innerHTML = '';
+    for (var i = 1; i <= count; i++) {
+      var block = document.createElement('div');
+      block.className = 'guest-block';
+      block.innerHTML =
+        '<div class="guest-label">Guest ' + i + '</div>' +
+        '<div class="guest-row">' +
+          '<div class="field">' +
+            '<label for="guestName' + i + '">Full Name</label>' +
+            '<input type="text" id="guestName' + i + '" name="guestName' + i + '" required />' +
+          '</div>' +
+          '<div class="field">' +
+            '<label for="guestDietary' + i + '">Dietary Restrictions</label>' +
+            '<input type="text" id="guestDietary' + i + '" name="guestDietary' + i + '" placeholder="None" />' +
+          '</div>' +
+        '</div>';
+      guestFieldsEl.appendChild(block);
+    }
+  }
+
+  partyPicker.addEventListener('change', function(e) {
+    if (e.target && e.target.name === 'partySize') {
+      renderGuestFields(parseInt(e.target.value, 10) || 0);
+    }
+  });
+
+  function showStatus(message, type) {
+    statusEl.textContent = message;
+    statusEl.className = 'status visible ' + type;
+  }
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    var selected = form.querySelector('input[name="partySize"]:checked');
+    if (!selected) {
+      showStatus('Please select the number attending.', 'error');
+      return;
+    }
+    var partySize = parseInt(selected.value, 10) || 0;
+
+    var guests = [];
+    for (var i = 1; i <= partySize; i++) {
+      guests.push({
+        name: (document.getElementById('guestName' + i) || {}).value || '',
+        dietary: (document.getElementById('guestDietary' + i) || {}).value || ''
+      });
+    }
+
+    var payload = {
+      leadName: document.getElementById('leadName').value,
+      partySize: partySize,
+      guests: guests,
+      notes: document.getElementById('notes').value
+    };
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
+    statusEl.className = 'status';
+
+    fetch(SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify(payload)
+    })
+      .then(function() {
+        showStatus('Thank you — your RSVP has been received!', 'success');
+        form.reset();
+        guestFieldsEl.innerHTML = '';
+        submitBtn.textContent = 'Send RSVP';
+        submitBtn.disabled = false;
+      })
+      .catch(function() {
+        showStatus('Something went wrong. Please try again or reach out directly.', 'error');
+        submitBtn.textContent = 'Send RSVP';
+        submitBtn.disabled = false;
+      });
+  });
+})();
+</script>
+
+</body>
+</html>

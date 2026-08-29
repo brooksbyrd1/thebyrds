@@ -2,6 +2,7 @@
   "name": "thebyrds",
   "compatibility_date": "2026-06-04",
   "assets": {
-    "directory": "."
+    "directory": ".",
+    "html_handling": "auto-trailing-slash"
   }
 }
